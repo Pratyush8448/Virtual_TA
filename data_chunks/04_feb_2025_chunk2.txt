@@ -1,0 +1,21 @@
+**A8:** Let's review your code. You're trying to send a request using the OpenAI module, which won't work. You need to send the request through an API proxy.
+
+**Q9: I tried using an API proxy, but I still got errors.**
+
+**A9:** Let's focus on getting the basic functionality working. We'll create a simple application and send a POST request using Thunder Client.
+
+**Q10: In the code, what goes in the brackets on lines 19, 20, 21, and 23?**
+
+**A10:** Those lines are for allowing requests from external servers. You can list the servers you want to allow. If you use `*`, anyone can access the application. It's better to restrict access by listing specific servers. For example, if you only want to allow access from `server1` and `server2`, you would list them. You only need to mention the domain name.
+
+**Q11: I'm stuck on the Docker part of the assignment.**
+
+**A11:** Let's review the Docker process. You need to create a Docker image and push it. The deliverables are the Git repo and the Docker image. It should be a public repository.
+
+**Q12: I'm having trouble with the FastAPI part of the assignment. I'm trying to send a POST request to a specific endpoint, but it's not working.**
+
+**A12:** Let's review the code. You'll need to automate the process using an LLM. The LLM will generate the code, which you'll then execute using the subprocess module in Python.
+
+**Q13: Why do we need to use the subprocess module?**
+
+**A13:** In this project, you'll receive tasks in different languages (English, Hindi, Urdu). The LLM will generate the code to handle these tasks. The subprocess module allows you to execute the generated code on your local machine.

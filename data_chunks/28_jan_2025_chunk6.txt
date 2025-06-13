@@ -1,0 +1,25 @@
+**A31:** It may be because you haven't pushed to GitHub yet.
+
+**Q32: I have a question about GA1, questions 10 and 11. I posted them on Discourse, but haven't received a reply. In question 10, the hash button is showing an error. In question 11, I don't understand the statement about the class in the hidden element below. What does this line mean?**
+
+**A32:** For question 10, you need to use inverted double quotes for the key and value in the JSON file. For question 11, you need to right-click and inspect the element to find the class name. The data value should be 35.
+
+**Q33: What are some other core concepts that are important to understand?**
+
+**A33:** Before I talk about those, let's start with a simple example of how to make an API call to an LLM. API calls are powerful because you can use them in your programs.
+
+**Q34: How do I get my API key?**
+
+**A34:** You can find the link to get your proxy token on the GitHub page. I'll demonstrate using this proxy, but you can use something similar for other LLMs.
+
+**Q35: What is a proxy?**
+
+**A35:** OpenAI provides the service, but you don't interact with them directly. Anand has purchased tokens from OpenAI and provides access via a proxy. The proxy acts as a middleman between you and OpenAI.
+
+**Q36: How many tokens does a prompt take?**
+
+**A36:** The prompt we used took 32 tokens. The response ("negative") took two tokens. The total was 34 tokens. This cost us 1/10,000 of a dollar. Keep track of your token usage.
+
+**Q37: How can I keep track of token usage?**
+
+**A37:** Keep track of the prompt and the cost in a file. This will help you be efficient.

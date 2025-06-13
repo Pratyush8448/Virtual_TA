@@ -1,0 +1,11 @@
+**Q15: One more thing: in FastAPI question 9, I'm giving the URL, but it's giving me the whole data. Even when I add conditions, it shows the whole data. I'll show you. Should I run this first?**
+
+**A15:** Add `/api` at the end of that. That's some logic error in your code. It should not fetch all of it. There's some logic error. You're getting a Cloudflare error. That's something to do with the CDN service giving some sort of response. We'll have to check with Anand.
+
+**Q16: Is my screen visible? In this Vercel question, what happened is that sometimes it was showing correctly earlier, and now it's showing an error. And look, it's showing correctly again. I don't know why this happens. The score also...**
+
+**A16:** At the moment, it's working, right? There was a slight bug; we discussed it this morning with Anand. There was a slight bug in the random generator for the file that you use. I believe it's been fixed now. That's why you're not getting an error at the moment. If you come across this problem again, notify us on Discourse.
+
+**Q17: I'm getting an error from this. I don't know how...**
+
+**A17:** In the ninth question, you're getting an error. Earlier, it was working fine. You'll need to... this is the Vercel one, right? No, this is the FastAPI one. You'll have to run the server for that. You should post this on Discourse. Just copy that whole error message itself and put it in a notepad or something, and then post on Discourse.

@@ -1,0 +1,31 @@
+**Q38: How are API calls made?**
+
+**A38:** You'll need a URL, headers (including authorization), and a JSON payload. The payload includes the model, messages, and response format. The response format should be strictly defined to avoid unexpected output.
+
+**Q39: Can you share the notebook file?**
+
+**A39:** No, we don't typically share the notebook file itself, as it prevents you from fully grasping the concepts. However, a sample file is available.
+
+**Q40: What about function calling?**
+
+**A40:** We'll cover function calling in a later session. It's a key part of the project. Function calling allows your LLM to decide which function to call based on the prompt. We'll use last term's Project Two to demonstrate.
+
+**Q41: What about embeddings?**
+
+**A41:** Embeddings are another important topic. They reduce the cost of using tokens by an order of magnitude. You can download embeddings from Hugging Face. We'll demonstrate this in a future session.
+
+**Q42: What about text extraction?**
+
+**A42:** We'll cover this in a future session.
+
+**Q43: What about Base64 encoding?**
+
+**A43:** We'll cover this in a future session. It's how you send images to the API.
+
+**Q44: I've seen students use the LLM to get answers to Quiz One. Can I do that?**
+
+**A44:** Yes, you can upload a screenshot of the question and ask the LLM for the answer and explanation. You would send it as a Base64 encoded URI. We'll cover this in a future session.
+
+**Q45: Can we simply go through the topics mentioned (prompt engineering, TDS, TA instructions, LLM sentiment analysis) during self-study?**
+
+**A45:** Yes, but this content is simplified. Reading through documentation is difficult, so we've put this together for you. We'll also demonstrate and do working examples.

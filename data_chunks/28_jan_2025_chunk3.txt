@@ -1,0 +1,23 @@
+It doesn't have to be publicly accessible while you're developing it. Just make sure it's public when you submit. These are absolute prerequisites; if any fail, your project won't be evaluated.
+
+**Q11: What is the grading scheme?**
+
+**A11:** Phase A is worth 10 marks, and Phase B is worth 10 marks. You get one mark for each task completed in Phase A and one for each task in Phase B. There are also bonus marks for additional tasks and code diversity. Last term, there were 12 bonus marks, and the highest score was 7 or 8 out of 12.
+
+**Q12: We give bonuses for code diversity. Does that mean we penalize copying?**
+
+**A12:** No, we don't penalize copying. We want you to learn. We encourage you to learn from each other, but we'll reward unique code.
+
+**Q13: How do I use the OpenAI LLM?**
+
+**A13:** You'll use it through a proxy. You'll get a $1 limit per month, renewed at the beginning of each month. Avoid exceeding this limit by carefully constructing your queries. We'll show you how to use environment variables to avoid putting your token directly in your code.
+
+**Q14: How do I get access to Perplexity AI?**
+
+**A14:** All IITM students (including BS students) have free access to the Pro version of Perplexity AI for one year. Use your IITM email address to register.
+
+**Q15: In the LLM section, the prompt engineering section mentions using the API a certain number of times. I haven't used it even once. The key was generated, but I didn't use it. What should I do?**
+
+**A15:** We'll cover this in a later session.
+
+**Q16: The textbox in question 3 doesn't appear. I think there's a CSS issue. I generated the JSON, but it's not being accepted. Should I refresh?**

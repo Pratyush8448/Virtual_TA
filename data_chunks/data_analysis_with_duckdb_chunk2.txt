@@ -1,0 +1,4 @@
+- [Data analysis with DuckDB - Notebook](https://drive.google.com/file/d/1Y9XSs-LeSz-ZmnQj4OGP-Q4yDkPJrmsZ/view)
+- [Parquet file format](https://parquet.apache.org/) - a fast columnar storage format that's becoming a de facto standard for big data
+- [DuckDB](https://duckdb.org/) - a fast in-memory database that's very good with large-scale analysis
+- [Plotly Datasets](https://github.com/plotly/datasets/) - a collection of sample datasets for analysis. This includes the [Kaggle Flights Dataset](https://www.kaggle.com/datasets/usdot/flight-delays) that the notebook downloads as [2015_flights.parquet](https://github.com/plotly/datasets/raw/master/2015_flights.parquet)

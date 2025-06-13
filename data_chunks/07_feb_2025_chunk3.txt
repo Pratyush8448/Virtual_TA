@@ -1,0 +1,9 @@
+**A10:** Many websites allow scraping, but you should always check their terms and conditions. If a website allows scraping, you can often use a page parameter in the URL to access subsequent pages (e.g., `page=2` for the second page). You can use a for loop to iterate through multiple pages.
+
+**Q11: What are the legal and technical considerations when scraping websites?**
+
+**A11:** Always check the website's terms and conditions before scraping. Some websites can detect when requests are not coming from a browser and may block you. To avoid this, use a sleep timer between requests to give the server time to respond. Selenium is an alternative approach that simulates a browser, but it's more involved than Beautiful Soup. The instructor mentions being banned from Nominatim for sending too many requests in a short time frame.
+
+**Q12: How can I use Beautiful Soup to extract data from an e-commerce website?**
+
+**A12:** The instructor demonstrates using Beautiful Soup to extract product names, prices, and links from an Amazon search result page. The instructor explains how to use the `find_all` function to locate specific tags and attributes (e.g., `span` elements with a specific class) and extract the text content. The instructor also shows how to convert string prices to numerical values. The instructor notes that the order of elements is preserved when using Beautiful Soup, ensuring that data is correctly associated.

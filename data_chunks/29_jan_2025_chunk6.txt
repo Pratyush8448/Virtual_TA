@@ -1,0 +1,7 @@
+**Q13: One more question: in question 9 (FastAPI), I'm giving the URL, but when I run the file, it shows the whole data. When I add conditions, it also shows the whole data. I'll show you that. Should I run this first?**
+
+**A13:** Before we do that, let's see what error comes out. You haven't put the actual correct URL, right? Just add `/api`. It's because this particular Flask module is not installed on Vercel. You should use the `requests` module instead of the `curl` command. You just use the requests and send the inputs to it. Because the proxy has its own method of doing some of these functions that don't match OpenAI's. It might have been a coincidence that it worked for 3.5. If you use the documentation that Anand has provided, then that might help. If you go back to where you get the token... You'll have to provide the documentation in this form. You'll use the requests instead of using the curl command. You just use the requests and send the inputs to it.
+
+**Q14: In question 5, I've enabled it, but I'm getting an "unexpected end of JSON input" error. I'm not sure why. I've tried different structures for the JSON.**
+
+**A14:** Copy this JSON to VS Code and save it as a JSON file. VS Code will parse it so you can see it better. At the bottom, you have an extra required address and additional properties that are not necessary. That shouldn't cause it to be invalid JSON. Try without that. Just remove that extra bit and try without it.

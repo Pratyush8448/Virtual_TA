@@ -1,0 +1,19 @@
+**A5:** Let's try `python -m venv venv` in PowerShell. If you are using a virtual environment, it will only return the libraries specifically present in that environment. Since you are currently using a global environment, it returns every library.
+
+**Q6: Have you tried the optional exercise I gave you for the Flask API (Zodiac sign one)?**
+
+**A6:** No one has tried it yet. The assignment was to ask for a person's month of birth and return their zodiac sign.
+
+**Q7: The main problem is that I'm spending almost 2-3 days on the TDS assignments. The GAs have 10-18 questions on average.**
+
+**A7:** I understand. The GAs are time-consuming. If you get some time and are in the mood, you can work on the optional mini-project. You can have many more types of ideas and execute them using Flask API.
+
+**Q8: Currently, I'm not in the directory that contains the Vercel file (vercel.json).**
+
+**A8:** I'm just demonstrating how to create the `requirements.txt` file.
+
+**Q9: If I'm running a virtual environment with `uv`, will it only copy out the tools that are in the virtual environment?**
+
+**A9:** Exactly. That's a downside of `uv`. When using `uv`, you are not installing those libraries. If they are not installed, they won't be present in your virtual environment, and therefore won't be in your `requirements.txt` file. For minor projects that you don't need to deploy, `uv` is fine. Otherwise, create a virtual environment and install the libraries there.
+
+**Q10: Now it's showing nothing. I don't know why.**

@@ -1,0 +1,82 @@
+## Transforming Images
+
+### Image Processing with PIL (Pillow)
+
+[![Python Tutorial: Image Manipulation with Pillow (16 min)](https://i.ytimg.com/vi_webp/6Qs3wObeWwc/sddefault.webp)](https://youtu.be/6Qs3wObeWwc)
+
+[Pillow](https://python-pillow.org/) is Python's leading library for image processing, offering powerful tools for editing, analyzing, and generating images. It handles various formats (PNG, JPEG, GIF, etc.) and provides operations from basic resizing to complex filters.
+
+Here's a minimal example showing common operations:
+
+```python
+# /// script
+# requires-python = ">=3.11"
+# dependencies = ["Pillow"]
+# ///
+
+from PIL import Image, ImageEnhance, ImageFilter
+
+async def process_image(path: str) -> Image.Image:
+    """Process an image with basic enhancements."""
+    with Image.open(path) as img:
+        # Convert to RGB to ensure compatibility
+        img = img.convert('RGB')
+
+        # Resize maintaining aspect ratio
+        img.thumbnail((800, 800))
+
+        # Apply enhancements
+        img = (ImageEnhance.Contrast(img)
+               .enhance(1.2))
+
+        return img.filter(ImageFilter.SHARPEN)
+
+if __name__ == "__main__":
+    import asyncio
+    img = asyncio.run(process_image("input.jpg"))
+    img.save("output.jpg", quality=85)
+```
+
+Key features and techniques you'll learn:
+
+- **Image Loading and Saving**: Handle various formats with automatic conversion
+- **Basic Operations**: Resize, rotate, crop, and flip images
+- **Color Manipulation**: Adjust brightness, contrast, and color balance
+- **Filters and Effects**: Apply blur, sharpen, and other visual effects
+- **Drawing**: Add text, shapes, and overlays to images
+- **Batch Processing**: Handle multiple images efficiently
+- **Memory Management**: Process large images without memory issues
+
+### Basic Image Operations
+
+Common operations for resizing, cropping, and rotating images:
+
+```python
+from PIL import Image
+
+async def transform_image(
+    path: str,
+    size: tuple[int, int],
+    rotation: float = 0
+) -> Image.Image:
+    """Transform image with basic operations."""
+    with Image.open(path) as img:
+        # Resize with anti-aliasing
+        img = img.resize(size, Image.LANCZOS)
+
+        # Rotate around center
+        if rotation:
+            img = img.rotate(rotation, expand=True)
+
+        # Auto-crop empty edges
+        img = img.crop(img.getbbox())
+
+        return img
+```
+
+### Color and Enhancement
+
+Adjust image appearance with built-in enhancement tools:
+
+```python
+from PIL import ImageEnhance, ImageOps

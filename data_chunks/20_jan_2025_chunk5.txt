@@ -1,0 +1,25 @@
+**A22:** This could be because GitHub no longer supports password authentication for Git operations. You need to use a personal access token or set up SSH keys for authentication.
+
+**Q23: How do I create and use a personal access token for GitHub authentication?**
+
+**A23:** You can create a personal access token in your GitHub account settings under "Developer settings." When pushing to GitHub, use your GitHub username and the generated token instead of your password.
+
+**Q24: How do I set up SSH keys for GitHub authentication?**
+
+**A24:** You can generate SSH keys using the `ssh-keygen` command and then add the public key to your GitHub account settings. This allows you to authenticate without using a password or personal access token.
+
+**Q25: What is the purpose of the `git remote add origin` command?**
+
+**A25:** This command adds a remote repository named "origin" to your local Git instance. "Origin" is a conventional name for the primary remote repository, and the URL specifies the location of the remote repository on GitHub.
+
+**Q26: How can I update the remote URL if I have already added one?**
+
+**A26:** You can update the remote URL using the `git remote set-url origin <new URL>` command, replacing `<new URL>` with the correct URL of your GitHub repository.
+
+**Q27: What is the difference between committing and pushing in Git?**
+
+**A27:** Committing saves changes to your local Git instance, while pushing uploads those committed changes to a remote repository like GitHub.
+
+**Q28: How can I use VS Code to simplify Git operations?**
+
+**A28:** VS Code has built-in Git integration and extensions that provide a graphical interface for managing your repository. You can stage changes, commit them with messages, push to remote repositories, manage branches, and perform other Git operations without using the command line.

@@ -1,0 +1,27 @@
+**Q15: Can you explain the Network tab in DevTools?**
+
+**A15:** The Network tab shows all external information the browser is fetching. For TDS, the "Fetch" tab is most useful, showing APIs, JSON code, and CSS files. It shows what the website is pulling from the server.
+
+**Q16: Can we modify the content in the Network tab?**
+
+**A16:** No, you can only modify the website's structure in the Elements tab.
+
+**Q17: Can you explain the Network tab again, briefly?**
+
+**A17:** The Network tab shows external information the browser is fetching from where the website is deployed. The "Fetch" tab is particularly useful for TDS, showing APIs, JSON, and CSS files.
+
+**Q18: In a later Week 1 question, we need to find values within a specific div class. Will the JavaScript code work on the entire site, or just the specified area?**
+
+**A18:** The JavaScript will work on the entire site because the DOM structure is a tree. However, you can use selectors to target specific elements within that structure.
+
+**Q19: How are HTML and CSS connected? Do we need JavaScript to extract information?**
+
+**A19:** HTML is the skeleton, JavaScript the muscles, and CSS the skin. JavaScript is used to extract information from the HTML code using CSS selectors (classes or IDs).
+
+**Q20: Can you explain the later part of the code used to extract data?**
+
+**A20:** The code uses a map function to iterate through a list of elements. `innerText` gives the text content of an element, while `innerHTML` gives the entire HTML code. `innerText` is generally preferred for data extraction.
+
+**Q21: Are there other commands or attributes besides `innerText`?**
+
+**A21:** Yes, there are other attributes. `text` is similar to `innerText`, but `innerText` is more reliable. Always use `innerText` if `text` doesn't work.

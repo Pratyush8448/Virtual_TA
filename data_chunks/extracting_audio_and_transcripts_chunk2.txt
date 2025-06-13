@@ -1,0 +1,84 @@
+1. Use `-c copy` when possible to avoid re-encoding
+2. Monitor progress with `-progress pipe:1`
+3. Use `-hide_banner` to reduce output verbosity
+4. Test commands with small clips first
+5. Use hardware acceleration when available (-hwaccel auto)
+
+Error Handling:
+
+```bash
+# Validate file before processing
+ffprobe input.mp4 2>&1 | grep "Invalid"
+
+# Continue on errors in batch processing
+ffmpeg -i input.mp4 output.mp4 -xerror
+
+# Get detailed error information
+ffmpeg -v error -i input.mp4 2>&1 | grep -A2 "Error"
+```
+
+<!-- Assessment: Share output of `ffprobe -v quiet -print_format json -show_format {video}` -->
+<!-- Assessment: Share output of `ffmpeg -i {video} -vf "select='eq(n,0)'" -vframes 1 {email}.jpg` -->
+
+## Media tools: yt-dlp
+
+[yt-dlp](https://github.com/yt-dlp/yt-dlp) is a feature-rich command-line tool for downloading audio/video from thousands of sites. It's particularly useful for extracting audio and transcripts from videos.
+
+Install using your package manager:
+
+```bash
+# macOS
+brew install yt-dlp
+
+# Linux
+curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o ~/.local/bin/yt-dlp
+chmod a+rx ~/.local/bin/yt-dlp
+
+# Windows
+winget install yt-dlp
+```
+
+Common operations for extracting audio and transcripts:
+
+```bash
+# Download audio only at lowest quality suitable for speech
+yt-dlp -f "ba[abr<50]/worstaudio" \
+       --extract-audio \
+       --audio-format mp3 \
+       --audio-quality 32k \
+       "https://www.youtube.com/watch?v=VIDEO_ID"
+
+# Download auto-generated subtitles
+yt-dlp --write-auto-sub \
+       --skip-download \
+       --sub-format "srt" \
+       "https://www.youtube.com/watch?v=VIDEO_ID"
+
+# Download both audio and subtitles with custom output template
+yt-dlp -f "ba[abr<50]/worstaudio" \
+       --extract-audio \
+       --audio-format mp3 \
+       --audio-quality 32k \
+       --write-auto-sub \
+       --sub-format "srt" \
+       -o "%(title)s.%(ext)s" \
+       "https://www.youtube.com/watch?v=VIDEO_ID"
+
+# Download entire playlist's audio
+yt-dlp -f "ba[abr<50]/worstaudio" \
+       --extract-audio \
+       --audio-format mp3 \
+       --audio-quality 32k \
+       -o "%(playlist_index)s-%(title)s.%(ext)s" \
+       "https://www.youtube.com/playlist?list=PLAYLIST_ID"
+```
+
+For Python integration:
+
+```python
+# /// script
+# requires-python = ">=3.9"
+# dependencies = ["yt-dlp"]
+# ///
+
+import yt_dlp

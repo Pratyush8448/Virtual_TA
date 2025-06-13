@@ -1,0 +1,9 @@
+# Read JSON lines from file into a DataFrame. JSON lines are typically one line per object.
+df = pd.read_json('data.jsonl', lines=True)
+```
+
+Practice JSON skills with these resources:
+
+- [JSON Generator](https://json-generator.com/): Create sample JSON data
+- [JSON Path Finder](https://jsonpathfinder.com/): Learn to navigate complex JSON structures
+- [JSON Schema Validator](https://www.jsonschemavalidator.net/): Validate JSON against schemas

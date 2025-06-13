@@ -1,0 +1,12 @@
+3. **Code Review**
+   - Keep PRs small (<400 lines)
+   - Use draft PRs for WIP
+   - Review your own code first
+   - Respond to all comments
+
+Essential Tools
+
+- [GitHub Desktop](https://desktop.github.com/): GUI client
+- [GitLens](https://gitlens.amod.io/): VS Code extension
+- [gh](https://cli.github.com/): GitHub CLI
+- [pre-commit](https://pre-commit.com/): Git hooks

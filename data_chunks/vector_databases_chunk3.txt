@@ -1,0 +1,42 @@
+# Create HNSW index for vector similarity search
+    conn.execute("CREATE INDEX vector_idx ON documents USING HNSW (vector)")
+    return conn, model
+
+async def search_similar(conn: duckdb.DuckDBPyConnection, model: SentenceTransformer,
+                        query: str, n_results: int = 3) -> list[dict]:
+    """Search for documents similar to query using vector similarity."""
+    # Encode query to vector
+    query_vector = model.encode(query).tolist()
+
+    # Search using HNSW index with explicit FLOAT[] cast
+    results = conn.execute("""
+        SELECT id, text, array_distance(vector, CAST(? AS FLOAT[768])) as distance
+        FROM documents
+        ORDER BY array_distance(vector, CAST(? AS FLOAT[768]))
+        LIMIT ?
+    """, [query_vector, query_vector, n_results]).fetchall()
+
+    return [{"id": r[0], "text": r[1], "distance": float(r[2])} for r in results]
+
+async def main():
+    conn, model = await setup_vector_db()
+
+    # Add sample documents
+    documents = ["Apple is a fruit", "Orange is citrus", "Computer is electronic"]
+    embeddings = model.encode(documents).tolist()
+
+    # Insert documents and vectors
+    conn.executemany("""
+        INSERT INTO documents (id, text, vector)
+        VALUES (?, ?, ?)
+    """, [(str(i), text, embedding)
+          for i, (text, embedding) in enumerate(zip(documents, embeddings), 1)])
+
+    # Search similar documents
+    results = await search_similar(conn, model, "fruit")
+    print(results)
+
+if __name__ == "__main__":
+    import asyncio
+    asyncio.run(main())
+```

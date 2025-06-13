@@ -1,0 +1,15 @@
+**A6:** Nominatim is an API used for extracting geolocation data. The instructor demonstrates how to use it with Postman, showing how to pass parameters for the location (e.g., "Delhi") and specify the desired format (JSON). The instructor notes that Nominatim may return multiple results if there are multiple locations with the same name (e.g., Delhi in India and Delhi in the United States).
+
+**Q7: How do I use Beautiful Soup to parse XML data?**
+
+**A7:** The instructor demonstrates using Beautiful Soup to parse XML data from the Hacker News API. The instructor explains how to use the `find_all` function to locate specific tags (e.g., "item") and extract the desired information. The instructor also explains the difference between `find` and `findall` functions. The instructor notes that if you encounter issues, you can use an XML viewer to examine the structure of the XML file. The instructor also explains that you should use an XML parser (lxml) instead of an HTML parser.
+
+**Q8: How do I handle situations where the number of values in different lists doesn't match?**
+
+**A8:** If the lengths of lists (e.g., product names, prices, links) don't match, it usually means there's an extra value. The instructor shows how to handle this by checking the lengths of the lists and potentially removing extra values.
+
+**Q9: How do I save the extracted data to a CSV file?**
+
+**A9:** The instructor demonstrates using the pandas library to create a DataFrame from the extracted data and then saving it to a CSV file using the `to_csv` method.
+
+**Q10: How do I scrape data from multiple pages of a website?**

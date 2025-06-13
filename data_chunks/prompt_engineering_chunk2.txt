@@ -1,0 +1,31 @@
+1. _To tie a shoelace, you cross the laces and pull them tight..._
+  2. _To tie a necktie, you place it around the collar and loop it through..._
+
+  _Now, apply a similar step-by-step style to describe how to tie a bow tie._ (Reason: Provides clear examples and a pattern to follow.)
+
+> Give examples to the model. If you want someone to build a house, show them a sketch. Don’t just say ‘build something.’
+> Giving examples is like showing a pattern. It makes everything easier to follow.
+
+[Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/multishot-prompting)
+| [OpenAI](https://platform.openai.com/docs/guides/prompt-engineering#tactic-provide-examples)
+| [Google](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/few-shot-examples)
+
+### Think step by step
+
+Instruct the model to reason through the problem step by step. This leads to more logical, well-structured answers.
+
+- **BAD**: _Given this transcript, is the customer satisfied?_ (Reason: No prompt for structured reasoning.)
+- **GOOD**: _Given this transcript, is the customer satisfied? Think step by step._ (Reason: Directly instructs the model to break down reasoning into steps.)
+
+> Ask the model to think step by step. Don’t ask the model to just give the final answer right away.
+> That's like asking someone to answer with the first thing that pops into their head.
+> Instead, ask them to break down their thought process into simple moves — like showing each rung of a ladder as they climb.
+> For example, when thinking step by step, the model could, A, list each customer question, B, find out if it was addressed, and C, decide that the agent answered only 2 out of the 3 questions.
+
+[Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/chain-of-thought)
+| [OpenAI](https://platform.openai.com/docs/guides/prompt-engineering#strategy-give-models-time-to-think)
+| [Google](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/break-down-prompts)
+
+### Assign a role
+
+Specify a role or persona for the model. This provides context and helps tailor the response style.

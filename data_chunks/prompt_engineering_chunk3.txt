@@ -1,0 +1,37 @@
+- **BAD**: _Explain how to fix a software bug._ (Reason: No role or perspective given.)
+- **GOOD**: _You are a seasoned software engineer. Explain how to fix a software bug in legacy code, including the debugging and testing process._ (Reason: Assigns a clear, knowledgeable persona, guiding the style and depth.)
+
+> Tell the model who they are. Maybe they’re a seasoned software engineer fixing a legacy bug, or an experienced copy editor revising a publication.
+> By clearly telling the model who they are, you help them speak with just the right expertise and style.
+> Suddenly, your explanation sounds like it’s coming from a true specialist, not a random voice.
+
+[Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/system-prompts)
+| [OpenAI](https://platform.openai.com/docs/guides/prompt-engineering#tactic-ask-the-model-to-adopt-a-persona)
+| [Google](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/assign-role)
+
+### Use XML to structure your prompt
+
+Use XML tags to separate different parts of the prompt clearly. This helps the model understand structure and requirements.
+
+- **BAD**: _Here’s what I want: Provide a summary and then an example._ (Reason: Unstructured, no clear separation of tasks.)
+- **GOOD**:
+  ```xml
+  <instructions>
+    Provide a summary of the concept of machine learning.
+  </instructions>
+  <example>
+    Then provide a simple, concrete example of a machine learning application (e.g., an email spam filter).
+  </example>
+  ```
+  (Reason: Uses XML tags to clearly distinguish instructions from examples.)
+
+> Think of your request like a box. XML tags are neat little labels on that box.
+> They help keep parts sorted, so nothing gets lost in the shuffle.
+
+[Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/use-xml-tags)
+| [OpenAI](https://platform.openai.com/docs/guides/prompt-engineering#tactic-use-delimiters-to-clearly-indicate-distinct-parts-of-the-input)
+| [Google](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/structure-prompts)
+
+### Use Markdown to format your output
+
+Encourage the model to use Markdown for headings, lists, code blocks, and other formatting features to produce structured, easily readable answers.

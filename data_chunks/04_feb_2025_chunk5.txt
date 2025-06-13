@@ -1,0 +1,11 @@
+**Q30: I have a question about the Base64 encoding in GA3, question 6. I converted an image to Base64 using Python, but the UI said it was wrong. I found another method, but how do I know which Base64 encoding is correct?**
+
+**A30:** You can compare the decoded image from both methods visually. The size and resolution should be the same. If the encoding is correct, the decoded image will match the original. You can also encode the image using an encoder to verify.
+
+**Q31: In previous assignments, some answers disappeared after logging out. Can we still check the answers to previous assignments, even though the deadline has passed?**
+
+**A31:** Officially, no. However, reviewing your answers can still be beneficial for learning.
+
+**Q32: Can you give me some hints on how to write a prompt to make the AI in question 9 say "yes"?**
+
+**A32:** That's something you'll need to figure out on your own. Try different prompts. You can also look at previous Discourse posts for ideas.

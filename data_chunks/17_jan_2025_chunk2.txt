@@ -1,0 +1,19 @@
+**A5:** The instructor shows how to access elements within a JSON object using indexing in Python. For example, to access the name of the third student in a list, you would use `students[2][name]`. JSON allows hierarchical data storage, making it easy to retrieve specific values.
+
+**Q6: How does JSON get loaded on a website (e.g., Discourse)?**
+
+**A6:** Websites often fetch JSON data from backend servers. The instructor shows an example on the Discourse website, where different data (weekly, yearly) is loaded based on the request parameters in the URL. Multiple filters can be added to the URL to refine the data fetched.
+
+**Q7: How can I use Python to access JSON data from a URL?**
+
+**A7:** The instructor demonstrates using the `requests` library in Python to fetch JSON data from a URL. The response status code (e.g., 200 for success) indicates whether the request was successful. The JSON data is then accessible as a Python dictionary. The instructor uses Postman to show how to send API requests and view the JSON response.
+
+**Q8: What is Postman and how does it work?**
+
+**A8:** Postman is a tool that acts as an intermediary between you and an API. It sends API calls and retrieves the data. Alternatively, the Thunder Client extension in VS Code can be used for the same purpose.
+
+**Q9: What are CSS selectors and combinators?**
+
+**A9:** The instructor explains CSS selectors and combinators, focusing on basic selectors and the direct child combinator (`>`) which selects only direct children of an element. More advanced combinators are mentioned but not covered in detail.
+
+**Q10: How to handle large JSON objects or datasets?**

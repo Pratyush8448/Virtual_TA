@@ -1,0 +1,31 @@
+- **BAD**: _Give me the steps in plain text._ (Reason: No specific formatting instructions, less readable.)
+- **GOOD**: _Provide the steps in a markdown-formatted list with ### headings for each section and numbered bullet points._ (Reason: Directly instructs to use Markdown formatting, making output more structured and clear.)
+- **BAD**: _Correct the spelling and show the corrections._ (Reason: No specific formatting instructions)
+- **GOOD**: _Correct the spelling, showing &lt;ins&gt;additions&lt;/ins&gt; and &lt;del&gt;deletions&lt;/del&gt;._ (Reason: Directly instructs to use HTML formatting, making output more structured and clear.)
+
+> Markdown is a simple formatting language that all models understand.
+> You can have them add neat headings, sections, bold highlights, and bullet points.
+> These make complex documents more scannable and easy on the eyes.
+
+### Use JSON for machine-readable output
+
+When you need structured data, ask for a JSON-formatted response. This ensures the output is machine-readable and organized.
+
+- **BAD**: _Just list the items._ (Reason: Unstructured plain text makes parsing harder.)
+- **GOOD**:
+
+  ````markdown
+  Organize as an array of objects in a JSON format, like this:
+
+  ```json
+  [
+    { "name": "Item 1", "description": "Description of Item 1" },
+    { "name": "Item 2", "description": "Description of Item 2" },
+    { "name": "Item 3", "description": "Description of Item 3" }
+  ]
+  ```
+  ````
+
+  (Reason: Instructing JSON format ensures structured, machine-readable output.)
+
+Note: Always use [JSON schema](playground#attachments) if possible. [JSON schema](https://json-schema.org/) is a way to describe the structure of JSON data. An easy way to get the JSON schema is to give ChatGPT sample output and ask it to generate the schema.

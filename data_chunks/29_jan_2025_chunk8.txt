@@ -1,0 +1,13 @@
+**Q18: One more thing I wanted to say: actually, I'm not... while installing ngrok with this terminal, I wasn't able to do that, so I installed it in a different directory using the app. Is it doing anything? When I run it from here...**
+
+**A18:** It shouldn't matter because we are able to access it through the browser. It was still able to access it, and you can see a 200 OK on there. That means the site is running okay; your model is running okay. Why you're getting a Cloudflare error, I'm not entirely sure. That's normally to do with the CDN service that is giving some sort of response out there. We'll have to check with Anand what the issue is.
+
+**Q19: Is my screen visible? In this Vercel question, what happened is that sometimes it was showing correctly, and now it's showing an error. And look, it's showing correctly again. I don't know why this happens. The score also...**
+
+**A19:** It looks like a Cloudflare error. I've noted this error. It is from Cloudflare. You could just try again. When did you try this, apart from just now? You got the same error yesterday as well? Yeah, so that's some logic error in your code. It should not fetch all of it. There is some logic error.
+
+**Q20: Should I install it separately?**
+
+**A20:** No, you won't require requirements for it. Vercel is able to run the program without that.
+
+**Q21: For Vercel, I will take the example code and try to run it. One more question: in question 9 (FastAPI), I'm giving the URL, but when I run the file, it shows the whole data. When I add conditions, it also shows the whole data. I'll show you that.**

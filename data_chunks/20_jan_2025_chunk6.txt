@@ -1,0 +1,7 @@
+**Q29: What is the significance of the `.git` folder in my project directory?**
+
+**A29:** The `.git` folder is a hidden directory that contains all the information related to your Git instance, including the history of commits, branches, and other metadata. It's essential for version control and should not be modified directly.
+
+**Q30: How can I ensure that my code is backed up and accessible to collaborators?**
+
+**A30:** By pushing your code to a remote GitHub repository, you create a backup of your project and make it accessible to collaborators who have been granted access. This ensures that your code is safe even if your local machine encounters issues.

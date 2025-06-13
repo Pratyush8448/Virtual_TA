@@ -1,0 +1,29 @@
+**A6:** The course has changed significantly since two terms ago. The instructors will consider adding more support sessions to help students catch up.
+
+**Q7: The deadline for GA1 is the 26th, and help was only provided after the deadline last term. Will this happen again?**
+
+**A7:** The TAs will hold sessions _before_ the GA deadline to help you learn how to use the tools.
+
+**Q8: The graded assignments (GAs) are practical, but the end-of-term exam is theory-based. Where can I learn the theory?**
+
+**A8:** The end-of-term exam format is changing. The instructors will provide a mock exam before the actual exam. Focus on familiarizing yourself with the tools.
+
+**Q9: I solved almost all the GA1 questions but my score is zero. Is this a glitch?**
+
+**A9:** Your answers are likely saved. If you added a question, re-enter all answers and save again. The instructors are working on a backend fix to prevent this.
+
+**Q10: What is the R0E and what should I focus on for grading?**
+
+**A10:** The projects are take-home, open-internet assignments. You'll receive a dataset and questions. R0E is a remote online exam (open-internet MCQ). The instructors will provide more information on both in future sessions.
+
+**Q11: I'm a non-IT student (Masters in Mathematics). Can I get an IT job with just the Data Science diploma?**
+
+**A11:** It's possible, but it depends on the company's requirements. Programming skills are valuable in many fields.
+
+**Q12: Should I take the programming diploma along with the data science diploma?**
+
+**A12:** Programming skills are very valuable. The two diplomas complement each other.
+
+**Q13: What are some standard tools I should focus on?**
+
+**A13:** Bash has been around since the 1970s. Focus on newer tools and techniques, such as LLMs and GPTs, which are powerful and in high demand.

@@ -1,0 +1,21 @@
+# Live Session: 17 Jan 2025
+
+[![2025-01-17 Week1 - Session 2 - TDS Jan 25](https://i.ytimg.com/vi_webp/hG5WqtbpfkI/sddefault.webp)](https://youtu.be/hG5WqtbpfkI)
+
+**Q1: How to solve question number 7 (counting Wednesdays between two dates)?**
+
+**A1:** Use Excel. Input the two dates into two cells. Use a command to find the difference in days, then divide by 7 to get the number of weeks. Since there's one Wednesday per week, that's the number of Wednesdays. If the start date isn't a Wednesday, a different approach is needed.
+
+**Q2: How to handle dates that don't start on a Wednesday?**
+
+**A2:** Instead of starting from the given date, start from the next day (e.g., if it starts on Tuesday, start on Wednesday). Calculate the difference in days and divide by 7. The method of simply dividing by 7 might not always give the correct answer, so the logic needs to be adjusted based on the starting day. Another approach is to start from the nearest Wednesday and iterate using a while loop, but this is less efficient.
+
+**Q3: How to extract a CSV file from a zip file?**
+
+**A3:** This is considered a basic task. Use a file explorer or command-line tools. The instructor skips this question.
+
+**Q4: What is JSON and how is it used?**
+
+**A4:** JSON (JavaScript Object Notation) is a way to store data, like names and ages of students or employees. It uses key-value pairs. The instructor demonstrates creating a JSON object in Python, showing how to access elements using indexing and nested structures. JSON can also be used in JavaScript and browser consoles.
+
+**Q5: How can I access data from a JSON object?**

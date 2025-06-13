@@ -1,0 +1,26 @@
+### Mistral OCR API
+
+[Mistral OCR](https://mistral.ai/products/ocr/) offers an end-to-end cloud API that preserves both text and layout, making it easier to isolate specific sections like References. It shows the most promise currently, though it requires post-processing.
+
+## Azure Document Intelligence API
+
+For enterprise users already in the Microsoft ecosystem, [Azure Document Intelligence](https://azure.microsoft.com/en-us/products/ai-services/document-intelligence) provides excellent raw OCR with enterprise SLAs. May require custom model training or post-processing to match GROBID's reference extraction capabilities.
+
+### Other libraries
+
+[Docling](https://github.com/DS4SD/docling) is IBM's document understanding library that supports PDF conversion. It can be challenging to install, particularly on Windows and some Linux distributions. Offers advanced document understanding capabilities beyond simple text extraction.
+
+[MegaParse](https://github.com/QuivrHQ/MegaParse) takes a comprehensive approach using LibreOffice, Pandoc, Tesseract OCR, and other tools. It has Robust handling of different document types but requires an OpenAI API key for some features. Good for complex documents but has significant dependencies.
+
+## Comparison of PDF-to-Markdown Tools
+
+| Tool         | Strengths                                | Weaknesses                   | Best For                             |
+| ------------ | ---------------------------------------- | ---------------------------- | ------------------------------------ |
+| PyMuPDF4LLM  | Structure preservation, LLM optimization | Requires PyTorch             | AI training data, semantic structure |
+| Markitdown   | Multi-format support, simple usage       | Less precise layout handling | Batch processing, mixed documents    |
+| Unstructured | Wide format support, active development  | Can be resource-intensive    | Production pipelines, integration    |
+| GROBID       | Reference extraction excellence          | Narrower use case            | Academic papers, citations           |
+| Docling      | Advanced document understanding          | Installation difficulties    | Research applications                |
+| MegaParse    | Comprehensive approach                   | Requires OpenAI API          | Complex documents, OCR needs         |
+
+How to pick:

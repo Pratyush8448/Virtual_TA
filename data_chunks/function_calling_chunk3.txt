@@ -1,0 +1,15 @@
+1. **Use Strict Mode**
+   - Always set `strict: True` to ensure valid function calls
+   - Define all required parameters
+   - Set `additionalProperties: False`
+2. **Use tool choice**
+   - Set `tool_choice: "required"` to ensure that the model will always call one or more tools
+   - The default is `tool_choice: "auto"` which means the model will choose a tool only if appropriate
+3. **Clear Descriptions**
+   - Write detailed function and parameter descriptions
+   - Include expected formats and units
+   - Mention any constraints or limitations
+4. **Error Handling**
+   - Validate function inputs before execution
+   - Return clear error messages
+   - Handle missing or invalid parameters

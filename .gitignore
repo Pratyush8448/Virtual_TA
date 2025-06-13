@@ -1,0 +1,51 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+
+# Environment
+.venv/
+venv/
+env/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Environment Variables
+.env
+.env.*
+
+# Logs and cache
+*.log
+*.db
+*.sqlite
+*.bak
+*.tmp
+
+# VS Code / IDEs
+.vscode/
+.idea/
+
+# FAISS index or Embedding files
+*.faiss
+*.pkl
+*.npz
+
+# Checkpoints (if using notebooks)
+.ipynb_checkpoints/
+
+# Promptfoo cache (if any)
+.evaluation_cache/
+
+# Coverage/test artifacts (if you add tests later)
+htmlcov/
+coverage.xml
+.cache/
+pytest_cache/
+
+# FastAPI auto-generated docs/static (if you generate later)
+static/
+docs/
+
+
+chrome-win64/

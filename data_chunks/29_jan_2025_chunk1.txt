@@ -1,0 +1,21 @@
+# Live Session: 29 Jan 2025
+
+[![2025-01-29 Week 3 - Session 2 - TDS Jan 25](https://i.ytimg.com/vi_webp/EPiVIP97fzI/sddefault.webp)](https://youtu.be/EPiVIP97fzI)
+
+**Q1: I am a student, and I joined the session without using my IITM ID. How do I rejoin with my IITM ID?**
+
+**A1:** You need to rejoin the session using your IITM ID. We don't allow anyone to join without their IITM ID.
+
+**Q2: Today's session is mostly about doubt clearing. I haven't seen the GAs yet. Can I come tomorrow after I've solved them?**
+
+**A2:** Tomorrow and the day after, we will mostly be covering content, so there won't be much scope for doubt clearing. We can address doubts towards the end of the session or while discussing a specific topic if the doubt relates to that topic.
+
+**Q3: Will the sessions cover content relevant to GA2?**
+
+**A3:** No, the content will be relevant to GA3. The deadline for GA3 has been pushed to Wednesday.
+
+**Q4: GA2 content looks straightforward. If I have any doubts after the sessions, I'll ask then.**
+
+**A4:** That would be great.
+
+**Q5: I was confused about the image compression in [unclear]. I tried to copy the code and run it in Colab, but it asked for third-party authentication. I wasn't sure what it was asking, so I pulled back.**

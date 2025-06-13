@@ -1,0 +1,23 @@
+**Q6: What is the tool to create the API?**
+
+**A6:** FastAPI.
+
+**Q7: Are the scores from the initial check (9/10 or 10/10) final, or will they be evaluated after submission?**
+
+**A7:** Whatever you last submitted is your final score.
+
+**Q8: In GA1, question 2 says to submit only the JSON body, not the headers. But if I don't submit headers, it shows an error. What should I do?**
+
+**A8:** This will be addressed toward the end of the session.
+
+**Q9: When running UVicorn on WSL, there are no issues. But on Windows, it seems there's an issue with anti-something, some shielders, or something on my computer, flagging it and preventing it from running. What should I do?**
+
+**A9:** Most web infrastructure runs on Linux servers (maybe 80%). These tools are designed with Linux in mind, and later ported to Windows. There will be some issues running them on Windows. You can get Linux in Windows now using the Windows Subsystem for Linux (WSL). You need at least 8 GB of RAM to run it with reasonable performance. Anything less won't work or will work poorly. If you can, install WSL; it's worth it. Then these tools will work out of the box.
+
+**Q10: What is CI/CD?**
+
+**A10:** Continuous Integration/Continuous Deployment. It automates tasks such as compiling, running, and sending code to devices. It reduces the time lag between finding a bug, fixing it, and pushing the fix to the devices that need it. This is useful in data science when pulling data from various places and quickly integrating findings into a workflow.
+
+**Q11: What is Vercel?**
+
+**A11:** Vercel is a platform to deploy applications. You can deploy quickly and easily, and it automatically rebuilds when you push an update. You can deploy directly from your GitHub repo.

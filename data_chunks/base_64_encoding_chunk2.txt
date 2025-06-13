@@ -1,0 +1,2 @@
+- [Base64 Decoder/Encoder](https://www.base64decode.org/) for online encoding/decoding
+- [data: URI Generator](https://dopiaza.org/tools/datauri/index.php) converts files to Data URIs

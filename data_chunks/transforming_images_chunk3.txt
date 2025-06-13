@@ -1,0 +1,89 @@
+Watch these tutorials for hands-on demonstrations:
+
+[![Image Processing Tutorial for beginners with Python PIL in 30 mins](https://i.ytimg.com/vi_webp/dkp4wUhCwR4/sddefault.webp)](https://youtu.be/dkp4wUhCwR4)
+
+### Image Processing with ImageMagick
+
+[ImageMagick](https://imagemagick.org/) is a powerful command-line tool for image manipulation, offering features beyond what's possible with Python libraries. It's particularly useful for:
+
+- Batch processing large image collections
+- Complex image transformations
+- High-quality format conversion
+- Creating image thumbnails
+- Adding text and watermarks
+
+Basic Operations:
+
+```bash
+# Format conversion
+convert input.png output.jpg
+
+# Resize image (maintains aspect ratio)
+convert input.jpg -resize 800x600 output.jpg
+
+# Compress image quality
+convert input.jpg -quality 85 output.jpg
+
+# Rotate image
+convert input.jpg -rotate 90 output.jpg
+```
+
+Common Data Science Tasks:
+
+```bash
+# Create thumbnails for dataset preview
+convert input.jpg -thumbnail 200x200^ -gravity center -extent 200x200 thumb.jpg
+
+# Normalize image for ML training
+convert input.jpg -normalize -strip output.jpg
+
+# Extract dominant colors
+convert input.jpg -colors 5 -unique-colors txt:
+
+# Generate image statistics
+identify -verbose input.jpg | grep -E "Mean|Standard|Kurtosis"
+```
+
+Batch Processing:
+
+```bash
+# Convert all images in a directory
+mogrify -format jpg *.png
+
+# Resize multiple images
+mogrify -resize 800x600 -path output/ *.jpg
+
+# Add watermark to images
+for f in *.jpg; do
+    convert "$f" -gravity southeast -draw "text 10,10 'Copyright'" "watermarked/$f"
+done
+```
+
+Advanced Features:
+
+```bash
+# Apply image effects
+convert input.jpg -blur 0x3 blurred.jpg
+convert input.jpg -sharpen 0x3 sharp.jpg
+convert input.jpg -edge 1 edges.jpg
+
+# Create image montage
+montage *.jpg -geometry 200x200+2+2 montage.jpg
+
+# Extract image channels
+convert input.jpg -separate channels_%d.jpg
+
+# Composite images
+composite overlay.png -gravity center base.jpg output.jpg
+```
+
+Watch this ImageMagick tutorial (16 min):
+
+[![ImageMagick Introduction (16 min)](https://i.ytimg.com/vi_webp/wjcBOoReYc0/sddefault.webp)](https://youtu.be/wjcBOoReYc0)
+
+Tools:
+
+- [Fred's ImageMagick Scripts](http://www.fmwconcepts.com/imagemagick/): Useful script collection
+- [ImageMagick Online Studio](https://magickstudio.imagemagick.org/): Visual command builder
+
+Tips:

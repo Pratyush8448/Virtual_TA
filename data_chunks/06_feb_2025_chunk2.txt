@@ -1,0 +1,13 @@
+- **Method 1:** If the webpage uses a JSON object, you can extract it directly.
+- **Method 2:** Use query selectors in the browser's console to extract the data. This involves finding a common element (class) in the HTML and using JavaScript to extract the data. The `$$` operator establishes a connection between the console and the elements tab. The `.` prefix selects elements by class, and `#` selects by ID.
+- **Method 3:** Sometimes, the data is embedded in JavaScript code within the webpage itself. You can find this in the browser's "Sources" tab. You can then use this JavaScript object to extract the data.
+
+**Q7: What's the difference between `innerText` and `innerHTML`?**
+
+**A7:** `innerText` returns only the text content of an element, while `innerHTML` returns the entire HTML code within that element.
+
+**Q8: I'm having trouble using the FastAPI in Chrome. I've posted on Discourse multiple times, but it's still not working. The error is "Method Not Allowed".**
+
+**A8:** When using POST requests with FastAPI, you need to specify the method in the request. I'll look into your Discourse post and get back to you. We can also schedule a separate meeting to discuss this further. The issue might be related to how your system interacts with the host (it might be localhost).
+
+**Q9: Regarding the project, the scope seems too broad. Can we narrow it down? Also, what tools are required? Is there a sandbox environment for testing?**

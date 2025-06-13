@@ -1,0 +1,34 @@
+## Parsing JSON
+
+JSON is everywhere—APIs, logs, configuration files—and its nested or large structure can challenge memory and processing. In this tutorial, we'll explore tools to flatten, stream, and query JSON data efficiently.
+
+For example, we'll often need to process a multi-gigabyte log file from a web service where each record is a JSON object.
+
+[![JSON Parsing in Python](https://i.ytimg.com/vi/1lxrb_ezP-g/sddefault.jpg)](https://youtu.be/1lxrb_ezP-g)
+
+This requires us to handle complex nested structures, large files that don't fit in memory, or extract specific fields. Here are the key tools and techniques for efficient JSON parsing:
+
+| Tool                                        | Extract from JSON...   | Why                                                               |
+| ------------------------------------------- | ---------------------- | ----------------------------------------------------------------- |
+| [jq](#command-line-json-processing-with-jq) | JSON in the shell      | Quick data exploration and pipeline processing                    |
+| [JMESPath](#jmespath-queries)               | JSON in Python         | Handle complex queries with a clean syntax                        |
+| [ijson](#streaming-with-ijson)              | JSON streams in Python | Parse streaming/large JSON files memory-efficiently               |
+| [Pandas](#pandas-json-columns)              | JSON columns in Python | Fast analysis of structured data                                  |
+| [SQL JSON](#sql-json-functions)             | JSON in databases      | Combine structured and semi-structured data                       |
+| [DuckDB](#duckdb-json-processing)           | JSON anywhere          | Fast analysis of JSON files / databases without loading to memory |
+
+**Examples:**
+
+- Use Pandas when you need to transform API responses into a DataFrame for further analysis.
+- Leverage ijson when dealing with huge JSON logs where memory is at a premium.
+- Apply jq for quick, iterative exploration directly in your terminal.
+
+Practice with these resources:
+
+- [JSONPath Online Evaluator](https://jsonpath.com/): Test JSON queries
+- [jq play](https://jqplay.org/): Interactive jq query testing
+- [DuckDB JSON Tutorial](https://duckdb.org/docs/data/json): Learn DuckDB JSON functions
+
+### Command-line JSON Processing with jq
+
+[jq](https://jqlang.org/) is a versatile command-line tool for slicing, filtering, and transforming JSON. It excels in quick data exploration and can be integrated into shell scripts for automated data pipelines.

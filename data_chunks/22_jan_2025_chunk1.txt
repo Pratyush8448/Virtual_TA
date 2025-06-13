@@ -1,0 +1,21 @@
+# Live Session: 22 Jan 2025
+
+[![2025-01-22 Week 2 - Session 3 - TDS Jan 25](https://i.ytimg.com/vi_webp/QnLi-C_LiXk/sddefault.webp)](https://youtu.be/QnLi-C_LiXk)
+
+**Q1: What are the essential base technologies to learn for the TDS course?**
+
+**A1:** Focus on these three areas: 1) Bash and shell scripting; 2) Git; 3) CSS, HTML, and JavaScript. Also, learn REST APIs. Other tools can be learned on the go once you have a basic understanding of these core technologies.
+
+**Q2: Regarding the tools and techniques needed for the TDS course, are Bash and shell scripting, Git, CSS, HTML, JavaScript, and REST APIs the only essential ones?**
+
+**A2:** Yes, those are the core technologies. Other tools are supplementary and can be learned as needed throughout the course. The instructor suggests a three-part approach to learning: 1) Define the purpose; 2) Determine the technique; 3) Select the tools.
+
+**Q3: In short, is it sufficient to learn the listed technologies to a certain depth, not necessarily to the level of a diploma?**
+
+**A3:** Yes, learning to a certain depth is sufficient. The learning process should always be purpose-driven. You don't need to become an expert in any one tool; you need to know how to use it to accomplish your task.
+
+**Q4: For the last two questions in Week 2 (the Llama file and the Docker file), do we need to install the applications or can we do it online?**
+
+**A4:** For the Llama file, you don't need to download anything. For the Docker file, you can use online tools like Google Colab, which provides a Linux environment. You can run Docker directly in Colab.
+
+**Q5: I deployed a project via GitHub, but I'm getting a 404 error. Why?**

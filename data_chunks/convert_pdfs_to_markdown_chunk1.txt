@@ -1,0 +1,23 @@
+## Converting PDFs to Markdown
+
+PDF documents are ubiquitous in academic, business, and technical contexts, but extracting and repurposing their content can be challenging. This tutorial explores various command-line tools for converting PDFs to Markdown format, with a focus on preserving structure and formatting suitable for different use cases, including preparation for Large Language Models (LLMs).
+
+Use Cases:
+
+- **LLM training and fine-tuning**: Create clean text data from PDFs for AI model training
+- **Knowledge base creation**: Transform PDFs into searchable, editable markdown documents
+- **Content repurposing**: Convert academic papers and reports for web publication
+- **Data extraction**: Pull structured content from PDF documents for analysis
+- **Accessibility**: Convert PDFs to more accessible formats for screen readers
+- **Citation and reference management**: Extract bibliographic information from academic papers
+- **Documentation conversion**: Transform technical PDFs into maintainable documentation
+
+### PyMuPDF4LLM
+
+[PyMuPDF4LLM](https://pymupdf.readthedocs.io/en/latest/pymupdf4llm/) is a specialized component of the PyMuPDF library that generates Markdown specifically formatted for Large Language Models. It produces high-quality markdown with good preservation of document structure. It's specifically optimized for producing text that works well with LLMs, removing irrelevant formatting while preserving semantic structure. Requires PyTorch, which adds dependencies but enables more advanced processing capabilities.
+
+PyMuPDF4LLM uses [MuPDF](https://mupdf.com/) as its PDF parsing engine. [PyMuPDF](https://pymupdf.readthedocs.io/) is emerging as a strong default for PDF text extraction due to its accuracy and performance in handling complex PDF structures.
+
+```bash
+PYTHONUTF8=1 uv run --with pymupdf4llm python -c 'import pymupdf4llm; h = open("pymupdf4llm.md", "w"); h.write(pymupdf4llm.to_markdown("$FILE.pdf"))'
+```

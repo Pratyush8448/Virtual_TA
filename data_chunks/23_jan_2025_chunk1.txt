@@ -1,0 +1,21 @@
+# Live Session: 23 Jan 2025
+
+[![2025-01-23 Week 3 - Session 4 - TDS Jan 25](https://i.ytimg.com/vi_webp/TxGY540ru3A/sddefault.webp)](https://youtu.be/TxGY540ru3A)
+
+**Q1: How can I compare two files using the command line?**
+
+**A1:** You can use the `diff` command in bash, or the `git diff` command if you've initialized a git repository. The `diff` command shows the differences between two files directly. `git diff` compares commits in a git repository.
+
+**Q2: I'm having trouble viewing my GA1. It's showing zero ones. Can you help?**
+
+**A2:** Let's look at your screen. It appears there are different timestamps. I'll help you troubleshoot.
+
+**Q3: How can I move files from multiple subfolders into a single folder using the command line?**
+
+**A3:** I used a bash script that combines the `find` command (to locate files of a specific type, like `.txt` files) and the `mv` command (to move them). The `find` command searches the current directory (`./`) for files (`-type f`) and the `-exec` option executes the `mv` command on each file found. The curly braces `{}` are placeholders for the filenames.
+
+**Q4: Will knowing only six SQL commands (SELECT, FROM, GROUP BY, etc.) be enough to complete this course?**
+
+**A4:** You'll only need basic SQL for this course, mainly for extracting data. We're not covering a full DBMS course. A good resource to learn more is SQLZoo. While you might not need more than six commands for this course, ChatGPT can help if you encounter more complex SQL queries.
+
+**Q5: How can I deploy a Flask application to Vercel?**

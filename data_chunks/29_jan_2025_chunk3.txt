@@ -1,0 +1,3 @@
+**A7:** Yes, please share your screen. (The instructor then guides the student through troubleshooting steps, including checking the code, going to the Vercel dashboard, and appending `/api` to the URL. The issue is that the Flask module is not installed on Vercel. The instructor suggests using a capital 'F' in `Flask` in the requirements.txt file. The instructor also suggests using GitHub, where a requirements.txt file is not needed.)
+
+**Q8: In the FastAPI question, I'm pushing the website, but it's not taking the conditions (API class equals 1A or class equals 1B) mentioned in the question. It's also giving the whole JSON file. What should I do?**

@@ -1,0 +1,18 @@
+uv uses [inline script metadata](https://packaging.python.org/en/latest/specifications/inline-script-metadata/#inline-script-metadata) for dependencies.
+The eliminates the need for `requirements.txt` or virtual environments. For example:
+
+```python
+# /// script
+# requires-python = ">=3.11"
+# dependencies = [
+#   "httpx",
+#   "pandas",
+# ]
+# ///
+```
+
+[![uv - Python package and project management | Inline Script Metadata (28 min)](https://i.ytimg.com/vi_webp/igWlYl3asKw/sddefault.webp)](https://youtu.be/igWlYl3asKw?t=1240)
+
+<!-- Assessment: Share output of `uv run --with httpie -- https https://httpbin.org/get?email={email}` -->
+<!-- Assessment: Share output of `uvx markitdown {email}.pdf` -->
+<!-- Assessment: Share output of `uv ruff format script.py` -->

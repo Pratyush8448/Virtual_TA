@@ -1,0 +1,7 @@
+Your score will be the sum of the marks above. No normalization, i.e. whether it's 0/20 or 22/20, what you get is what you get.
+
+This execution will be automated via:
+
+- [`validate.py`](project-1/validate.py) to check the pre-requisites and generate the eligible `images.txt`
+- `export AIPROXY_TOKEN=...` to set the AI Proxy token
+- [`run.sh`](project-1/run.sh) to evaluate all submissions.

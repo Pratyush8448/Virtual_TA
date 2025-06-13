@@ -1,0 +1,27 @@
+# Live Session: 31 Jan 2025
+
+[![2025-01-31 Week 3 - Session 4 - TDS Jan 25](https://i.ytimg.com/vi_webp/sdg4N-H4BR0/sddefault.webp)](https://youtu.be/sdg4N-H4BR0)
+
+**Q1: In today's session, what will be covered?**
+
+**A1:** We will be discussing the function calling part of OpenAI. We will create a program that takes user prompts in English, identifies which function to call based on the prompt, and then calls that function.
+
+**Q2: What is the first step in the process?**
+
+**A2:** First, we import the `requests` library. Then, we'll get the headers and URL for the request, and finally, we'll create a JSON body for the request.
+
+**Q3: What is the goal of the program?**
+
+**A3:** The program aims to automate the process of ordering something from an online store. It will take a user's order in plain English, understand the request, and place the order. It will also include a feature for updating existing orders.
+
+**Q4: How will the program understand the user's prompt?**
+
+**A4:** The program will send the user's prompt to OpenAI. OpenAI will use its function calling capabilities to identify the appropriate function to call from a predefined set of functions within your application, and return the function name and parameters in a JSON format.
+
+**Q5: What are the predefined functions?**
+
+**A5:** The predefined functions are a set of tools your application provides. Examples include `get_weather_info` (which takes a location as a parameter) and `best_hotels` (which also takes a location). OpenAI will determine which function to call based on the user's prompt.
+
+**Q6: How does OpenAI determine which function to call?**
+
+**A6:** OpenAI analyzes the user's prompt and, based on its understanding of the context and semantics, selects the appropriate function from the predefined set. The response from OpenAI will include the function name and its required parameters in JSON format.

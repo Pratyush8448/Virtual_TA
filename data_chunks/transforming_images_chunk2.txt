@@ -1,0 +1,106 @@
+async def enhance_image(
+    img: Image.Image,
+    brightness: float = 1.0,
+    contrast: float = 1.0,
+    saturation: float = 1.0
+) -> Image.Image:
+    """Apply color enhancements to image."""
+    enhancers = [
+        (ImageEnhance.Brightness, brightness),
+        (ImageEnhance.Contrast, contrast),
+        (ImageEnhance.Color, saturation)
+    ]
+
+    for Enhancer, factor in enhancers:
+        if factor != 1.0:
+            img = Enhancer(img).enhance(factor)
+
+    return img
+```
+
+### Filters and Effects
+
+Apply visual effects and filters to images:
+
+```python
+from PIL import ImageFilter
+
+def apply_effects(img: Image.Image) -> Image.Image:
+    """Apply various filters and effects."""
+    effects = {
+        'blur': ImageFilter.GaussianBlur(radius=2),
+        'sharpen': ImageFilter.SHARPEN,
+        'edge': ImageFilter.FIND_EDGES,
+        'emboss': ImageFilter.EMBOSS
+    }
+
+    return {name: img.filter(effect)
+            for name, effect in effects.items()}
+```
+
+### Drawing and Text
+
+Add text, shapes, and overlays to images:
+
+```python
+from PIL import Image, ImageDraw, ImageFont
+
+async def add_watermark(
+    img: Image.Image,
+    text: str,
+    font_size: int = 30
+) -> Image.Image:
+    """Add text watermark to image."""
+    draw = ImageDraw.Draw(img)
+    font = ImageFont.truetype("arial.ttf", font_size)
+
+    # Calculate text size and position
+    text_bbox = draw.textbbox((0, 0), text, font=font)
+    text_width = text_bbox[2] - text_bbox[0]
+    text_height = text_bbox[3] - text_bbox[1]
+
+    # Position text at bottom-right
+    x = img.width - text_width - 10
+    y = img.height - text_height - 10
+
+    # Add text with shadow
+    draw.text((x+2, y+2), text, font=font, fill='black')
+    draw.text((x, y), text, font=font, fill='white')
+
+    return img
+```
+
+### Memory-Efficient Processing
+
+Handle large images without loading them entirely into memory:
+
+```python
+from PIL import Image
+import os
+
+async def process_large_images(
+    input_dir: str,
+    output_dir: str,
+    max_size: tuple[int, int]
+) -> None:
+    """Process multiple large images efficiently."""
+    os.makedirs(output_dir, exist_ok=True)
+
+    for filename in os.listdir(input_dir):
+        if not filename.lower().endswith(('.png', '.jpg', '.jpeg')):
+            continue
+
+        input_path = os.path.join(input_dir, filename)
+        output_path = os.path.join(output_dir, filename)
+
+        with Image.open(input_path) as img:
+            # Process in chunks using thumbnail
+            img.thumbnail(max_size)
+            img.save(output_path, optimize=True)
+```
+
+Practice with these resources:
+
+- [Pillow Documentation](https://pillow.readthedocs.io/): Complete API reference
+- [Python Image Processing Tutorial](https://realpython.com/image-processing-with-the-python-pillow-library/): In-depth guide
+- [Sample Images Dataset](https://www.kaggle.com/datasets/lamsimon/celebs): Test images for practice

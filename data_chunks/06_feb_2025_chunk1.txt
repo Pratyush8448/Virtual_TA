@@ -1,0 +1,27 @@
+# Live Session: 06 Feb 2025
+
+[![2025-02-06 Week 4 - Session 3 - TDS Jan 25](https://i.ytimg.com/vi_webp/u5RFmePd7NQ/sddefault.webp)](https://youtu.be/u5RFmePd7NQ)
+
+**Q1: In this GA4 session, what's new compared to previous GAs?**
+
+**A1:** The trajectory has moved from hard to easy. This GA is much easier and lighter than previous ones.
+
+**Q2: How do I extract a table from HTML using Google Sheets?**
+
+**A2:** This functionality is available in Google Sheets but not in Excel (unless you use plugins). The `IMPORTHTML` function will give you a #NAME? error in Excel.
+
+**Q3: How can I extract data from the ODI Batsman Stats webpage?**
+
+**A3:** I'll show you how to extract data from a different webpage, but you can find a similar example in my previous live session on YouTube.
+
+**Q4: What do the parameters in the `IMPORTHTML` function mean?**
+
+**A4:** The four parameters are: URL, query (either "list" or "table"), index (table number), and locale. The index is zero-based (like Python).
+
+**Q5: How does the `IMPORTHTML` function automatically find the table?**
+
+**A5:** It finds the table based on the index you provide. If there are multiple tables, you'll need to adjust the index accordingly.
+
+**Q6: How can I extract data from a webpage that doesn't use a JSON object?**
+
+**A6:** There are three ways:

@@ -1,0 +1,15 @@
+**Q12: What is the difference between Docker run and Docker compose?**
+
+**A12:** Docker compose is for local testing. You can create a local network, give it a name, and test with four or five containers. For larger deployments, use Swarm (provided by Docker), Kubernetes, or Mesos.
+
+**Q13: Can we wrap our MAD1 and MAD2 projects using Docker?**
+
+**A13:** Yes, that's possible.
+
+**Q14: Is there a demo where all the tools are used in a single project?**
+
+**A14:** There will be a separate session for the project, towards the end of this week or the beginning of next week. This session will show how all the tools fit together.
+
+**Q15: If someone goes through CSS, JavaScript, GitHub, and REST API, will that cover 50% of the course?**
+
+**A15:** Yes, roughly. The core technologies (REST APIs, JavaScript, HTML, CSS) haven't changed much in 30 years. Learning these will give you a foundation to learn other tools more easily. The course will also spend significant time on LLMs and how they fit into the workflow.

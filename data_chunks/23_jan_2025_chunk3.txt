@@ -1,0 +1,5 @@
+**A9:** A virtual environment creates a separate, isolated environment for your project. This prevents conflicts between different project dependencies. Think of it like creating a separate section in a swimming pool for a child, where the depth is less than the main pool. You can install libraries (like Flask and Pandas) within the virtual environment without affecting your global Python packages.
+
+**Q10: What is the assignment?**
+
+**A10:** Create a Flask application that takes a user's birth month as input and returns their zodiac sign. This is a fun exercise to improve your Flask skills. You can deploy it to Vercel or Netlify and share the link. Remember to create a `.gitignore` file to exclude the virtual environment folder.

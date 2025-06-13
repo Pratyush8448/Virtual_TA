@@ -1,0 +1,33 @@
+- **Need LLM-ready content?** PyMuPDF4LLM is specifically designed for this
+- **Working with multiple document formats?** Markitdown handles diverse inputs
+- **Extracting academic references?** GROBID remains the standard
+- **Building a production pipeline?** Unstructured offers the best integration options
+- **Handling complex layouts?** Consider commercial OCR like Mistral or Azure Document Intelligence
+
+The optimal approach depends on your specific requirements regarding accuracy, structure preservation, and the intended use of the extracted content.
+
+## Tips for Optimal PDF Conversion
+
+1. **Pre-process PDFs** when possible:
+
+   ```bash
+   # Optimize a PDF for text extraction first
+   ocrmypdf --optimize 3 --skip-text input.pdf optimized.pdf
+   ```
+
+2. **Try multiple tools** on the same document to compare results:
+
+3. **Handle scanned PDFs** appropriately:
+
+   ```bash
+   # For scanned documents, run OCR first
+   ocrmypdf --force-ocr input.pdf ocr_ready.pdf
+   PYTHONUTF8=1 uvx markitdown ocr_ready.pdf > markitdown.md
+   ```
+
+4. **Consider post-processing** for better results:
+
+   ```bash
+   # Simple post-processing example
+   sed -i 's/\([A-Z]\)\./\1\.\n/g' output.md  # Add line breaks after sentences
+   ```

@@ -1,0 +1,58 @@
+return results
+```
+
+### Pandas JSON Columns
+
+[Pandas](https://pandas.pydata.org/) makes it easy to work with tabular data that includes JSON strings. When you receive API data where one column holds nested JSON, flattening these structures lets you analyze and visualize the data using familiar DataFrame operations.
+
+**Example:** Flattening customer records stored as nested JSON in a CSV file to extract demographic details and spending patterns.
+
+```python
+import pandas as pd
+
+# Parse JSON strings in a column
+df = pd.DataFrame({'json_col': ['{"name": "Alice", "age": 30}', '{"name": "Bob", "age": 25}']})
+df['parsed'] = df['json_col'].apply(pd.json_normalize)
+
+# Normalize nested JSON columns
+df = pd.read_csv('data.csv')
+df_normalized = pd.json_normalize(
+    df['nested_json'].apply(json.loads),
+    record_path=['items'],        # List of nested objects to unpack
+    meta=['id', 'timestamp']      # Keep these columns from parent
+)
+```
+
+### SQL JSON Functions
+
+[SQL](https://en.wikipedia.org/wiki/SQL:2016) supports built-in JSON functions allow you to query and manipulate JSON stored within relational databases.
+These are implemented by most popular databases, including
+[SQLite](https://www.sqlite.org/json1.html),
+[PostgreSQL](https://www.postgresql.org/docs/current/functions-json.html), and
+[MySQL](https://dev.mysql.com/doc/refman/8.4/en/json-function-reference.html).
+This is especially handy when you have a hybrid data model, combining structured tables with semi-structured JSON columns.
+
+**Example:** An application that stores user settings or application logs as JSON in a SQLite database, enabling quick lookups and modifications without external JSON parsing libraries.
+
+```sql
+SELECT
+    json_extract(data, '$.name') as name,
+    json_extract(data, '$.details.age') as age
+FROM users
+WHERE json_extract(data, '$.active') = true
+```
+
+### DuckDB JSON Processing
+
+[DuckDB](https://duckdb.org/) shines when analyzing JSON/JSONL files directly, making it a powerful tool for data analytics without the overhead of loading entire datasets into memory. Its SQL-like syntax simplifies exploratory analysis on nested data.
+
+**Example:** Performing ad-hoc analytics on streaming JSON logs from a web service, such as calculating average response times or aggregating user behavior metrics.
+
+```sql
+SELECT
+    json_extract_string(data, '$.user.name') as name,
+    avg(json_extract_float(data, '$.metrics.value')) as avg_value
+FROM read_json_auto('data/*.jsonl')
+GROUP BY 1
+HAVING avg_value > 100
+```

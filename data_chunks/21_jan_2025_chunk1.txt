@@ -1,0 +1,23 @@
+# Live Session: 21 Jan 2025
+
+[![2025-01-21 Week 2 - Session 2 - TDS Jan 25](https://i.ytimg.com/vi_webp/0e0RhXREnxU/sddefault.webp)](https://youtu.be/0e0RhXREnxU)
+
+**Q1: How much depth of knowledge is needed for the tools in the TDS course, specifically for GA1 and GA2?**
+
+**A1:** The goal is to give you sufficient proficiency to execute the purpose of the tools, not to make you an expert. The focus is on GA1 and GA2 because of the approaching deadline. Basic knowledge will suffice; how deep you go is up to you. The biggest challenge is usually reading and understanding documentation. These sessions are designed to help you overcome that hurdle.
+
+**Q2: What is the tool to create the API?**
+
+**A2:** FastAPI. It will be demonstrated in this session.
+
+**Q3: Will there be a review of the previous sessions?**
+
+**A3:** Recordings are available on the YouTube playlist. Summaries are also available on the Tools in Data Science website (the last item on the page). The summaries were generated using AI, and the process is explained. An overarching summary may be added later, but not today.
+
+**Q4: In the week 2 GA assignment, when using FastAPI, question 9 asks for an authentication tool from NGrok. After three uses, it says the limitation has expired. What can we do?**
+
+**A4:** NGrok will be discussed in this session. The limitation is that you can only run one server or one tunnel at a time.
+
+**Q5: In the GitHub Actions section, question 7 asks about creating a FastAPI webpage using GitHub. It seems to require a premium version. Is there a workaround?**
+
+**A5:** You can do it without a premium version. The only time you might have an issue is if you're using Codespaces and run out of the 125-hour limitation. Students have free access to GitHub.

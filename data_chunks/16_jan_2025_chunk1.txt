@@ -1,0 +1,29 @@
+# Live Session: 16 Jan 2025
+
+[![2025-01-16 Week 1 - Session 1 - TDS Jan 25](https://i.ytimg.com/vi_webp/1H5Aq7HjqwQ/sddefault.webp)](https://youtu.be/1H5Aq7HjqwQ)
+
+**Q1: What will be covered in this session?**
+
+**A1:** This session will cover concepts from Week 1 of the graded assignment in Tools in Data Science (TDS). The focus is on guiding students toward solutions, not providing exact answers. Week 2 will be covered in the next session.
+
+**Q2: Is it possible to reschedule the TDS session?**
+
+**A2:** The instructor will check if rescheduling is possible. If not, recordings will be available on YouTube.
+
+**Q3: The first question in the graded assignment is about VS Code. What's involved?**
+
+**A3:** The question focuses on installing VS Code and running a specific command in the terminal, then pasting the output into an input box. There's no significant technical component to this question.
+
+**Q4: What are the benefits of using the UV command-line tool?**
+
+**A4:** UV eliminates the need to create virtual environments. You include small portions of code and run the application with minimal setup.
+
+**Q5: How does UV integrate with VS Code?**
+
+**A5:** There's no integration; UV is used in the command prompt, similar to pip (Python), npm (JavaScript), or Node.js.
+
+**Q6: Are there examples demonstrating UV usage and integration with VS Code?**
+
+**A6:** No specific VS Code integration is needed. UV is used in the command line, like pip or npm. A previous project (Project 2) used UV to automate running 687 student Python submissions, each with unique requirements. Students added metadata to their Python files specifying the Python version and required libraries. UV dynamically handled these requirements for each submission.
+
+**Q7: In the RWE exam, what will the format be like?**

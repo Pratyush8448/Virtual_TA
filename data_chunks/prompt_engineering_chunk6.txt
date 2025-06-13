@@ -1,0 +1,27 @@
+- **BAD**: _What is the best route to take?_ (Reason: Direct question without prompting reasoning steps first.)
+- **GOOD**: _First, explain your reasoning step by step for how you determine the best route. Then, after you’ve reasoned it out, state your final recommendation for the best route._ (Reason: Forces the model to show its reasoning process before giving the final answer.)
+
+> BEFORE making its final choice, have the model talk through their thinking. Reasoning first, answer second.
+> That way, the model won't be tempted to justify an answer that they gave impulsively. It is also more likely to think deeper.
+
+### Use proper spelling and grammar
+
+A well-written, grammatically correct prompt clarifies expectations. Poorly structured prompts can confuse the model.
+
+- **BAD**: _xplin wht the weirless netork do? make shur to giv me a anser??_ (Reason: Poor spelling and unclear instructions.)
+- **GOOD**: _Explain what a wireless network does. Please provide a detailed, step-by-step explanation._ (Reason: Proper spelling and clarity lead to a more coherent response.)
+
+> If your question sounds like gibberish, expect a messy answer. Speak cleanly.
+> When you do, the response will be much clearer.
+
+## Video Tutorials
+
+Watch [Prompt Engineering Tutorial – Master ChatGPT and LLM Responses (41 min)](https://youtu.be/_ZvnD73m40o). It covers:
+
+1. Basics of **AI and large language models**.
+2. How to write clear and detailed prompts to improve answers.
+3. Tips for creating interactive and personalized AI responses.
+4. Advanced topics like **AI mistakes** (hallucinations) and **text embeddings** (how AI understands words).
+5. Fun examples, like making AI write poems or correct grammar.
+
+[![Prompt Engineering Tutorial – Master ChatGPT and LLM Responses](https://i.ytimg.com/vi_webp/_ZvnD73m40o/sddefault.webp)](https://youtu.be/_ZvnD73m40o)

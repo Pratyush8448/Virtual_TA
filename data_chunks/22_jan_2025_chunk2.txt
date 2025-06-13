@@ -1,0 +1,21 @@
+**A5:** A 404 error means the page isn't found. The instructor suggests posting a screenshot and your email ID on the Discourse forum for more detailed debugging.
+
+**Q6: In the Llama file question, the URL shows the correct answer initially, but after refreshing, it shows an incorrect answer. Why?**
+
+**A6:** Post a screenshot and your email ID on the Discourse forum. This will allow the instructor to check the backend and the script to determine the cause.
+
+**Q7: Are the graded assignments open internet or closed internet?**
+
+**A7:** All graded assignments are open internet, except for the final in-person exam, which is closed internet.
+
+**Q8: I'm having trouble signing into GitHub with my IIT email. Is GitHub only available for personal emails?**
+
+**A8:** GitHub is available for any email. You need to sign up first, then sign in. For evaluation purposes, your submissions will be linked to the email address you use to log in. The instructor recommends signing up with your IIT email.
+
+**Q9: For the GitHub question, if I've signed in with a personal ID but also have an IIT ID, will that be a problem?**
+
+**A9:** There shouldn't be a problem. The instructor recommends using your IIT email for evaluation purposes.
+
+**Q10: In the graded assignment 2, image compression, I'm getting an error: "Could not process the image. Is it browser supported? Image pixels do not match the original." I've tried several ways, including using Photoshop to ensure the image resolution is the same. What's wrong?**
+
+**A10:** The image size should be less than 1,300,000 bytes. The instructor will make a note of this issue and investigate. The error may be browser-related, so trying a different browser might help. The instructor also requests the Discourse link be shared.

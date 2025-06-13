@@ -1,0 +1,33 @@
+# Live Session: 04 Feb 2025
+
+[![2025-02-04 Week 4 - Session 1 - TDS Jan 25](https://i.ytimg.com/vi_webp/8A7Z_PN_PzQ/sddefault.webp)](https://youtu.be/8A7Z_PN_PzQ)
+
+**Q1: I'm having trouble with question 7 of the GA3 assignment. I'm trying to send a POST request, but it keeps showing "method not allowed".**
+
+**A1:** When you access a URL from a browser, it sends a GET request. To send a POST request, you need an extension like Thunder Client or Postman. Thunder Client doesn't require a login, but Postman does. However, Thunder Client is now a paid service.
+
+**Q2: Previously, I was seeing some things, but now I'm getting the "method not allowed" error. I don't know why.**
+
+**A2:** Let's troubleshoot this. We'll use Thunder Client.
+
+**Q3: After changing my method to POST, what do I do next?**
+
+**A3:** Go to the "Body" section in Thunder Client. Create a JSON object using curly braces `{}`. Then, refer to question 7 for the JSON object to copy and paste. Remove the three dots (...) from the copied JSON. Click the "Send" button.
+
+**Q4: I'm getting an error: "API key client option must be set either by passing API key to the client or by setting the OPENAI_API_KEY environment variable." Am I trying to access an OpenAI key?**
+
+**A4:** Yes, you are. Since you don't have a `.env` file, you need to create one. For now, comment out the code after line 172 and replace it with `return "hello"` to test. Restart the server.
+
+**Q5: Thunder Client is not showing any paywall.**
+
+**A5:** Thunder Client has a free version with limitations (e.g., 15 collections and 15 requests).
+
+**Q6: Earlier, Thunder Client was free. When did it change?**
+
+**A6:** Recently.
+
+**Q7: I'm still stuck. Can you spell "Thunder Client"?**
+
+**A7:** T-H-U-N-D-E-R-C-L-I-E-N-T
+
+**Q8: I'm still getting errors. What's wrong?**

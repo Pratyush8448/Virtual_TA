@@ -1,0 +1,17 @@
+# Live Session: 01 Feb 2025
+
+[![2025-02-01 Week 3 - Session 5 - TDS Jan 25](https://i.ytimg.com/vi_webp/tsn7B7mDzw8/sddefault.webp)](https://youtu.be/tsn7B7mDzw8)
+
+**Q1: Can I use Python notebooks instead of VS Code for this project?**
+
+**A1:** You can use Python notebooks for interactive development and debugging, but for a production environment, a script file (.py) is better because it allows for a defined order of execution, unlike notebooks where code cells may not necessarily branch from one section to another. Notebooks are great for sharing with others who may not understand the code, as you can add Markdown to explain each step.
+
+**Q2: In the delete order function, could a wrong order ID get deleted if the prompt contains multiple things that could match multiple orders?**
+
+**A2:** That's a good question. This application isn't built to be very robust. The goal is to demonstrate GPT's ability to convert natural language into functions that the application understands. A real-world application would have a more robust interface (website or local app) with precisely crafted inputs to map to functions, preventing such errors.
+
+**Q3: How can I avoid manually managing virtual environments and dependencies when deploying my application?**
+
+**A3:** Use `uv`. `uv` is similar to Docker in that it handles dependencies without requiring manual management of virtual environments. You just specify your dependencies at the top of your code, and `uv` handles everything else, including creating and disposing of the virtual environment. This is especially useful when dealing with many submissions with different package requirements, as seen in a previous project with nearly 700 submissions.
+
+**Q4: How does the application know which function to run based on the user's request?**

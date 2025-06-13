@@ -1,0 +1,27 @@
+**Q14: I have a question about the Base64 encoding in GA3, question 6. I converted an image to Base64 using Python, but the UI said it was wrong. I found another method, but how do I know which Base64 encoding is correct?**
+
+**A14:** If you paste the Base64 encoding into a decoder, you can visually compare the resulting image to the original. The size and resolution should be the same.
+
+**Q15: Some of my answers from previous assignments disappeared after logging out of the website. Why?**
+
+**A15:** That's a known issue. Some answers persist, but others are lost.
+
+**Q16: Can I still check the answers to previous assignments, even though the deadline has passed?**
+
+**A16:** Officially, no. However, if you can check the answers, you can learn from your mistakes.
+
+**Q17: I got stuck on the Docker part of the assignment. Can you elaborate?**
+
+**A17:** It sounds like you may have had issues with Docker push and tagging. Let's review your process.
+
+**Q18: I only gave myself 5 hours for this assignment, which wasn't enough. GA2 took a lot of time, especially the last question (running a local server on a different API).**
+
+**A18:** Five hours is often insufficient for these assignments. GA2, in particular, can be time-consuming.
+
+**Q19: For question 9, I'm trying to write a string that will make the AI say "yes," but it's not working. Can you give me some hints?**
+
+**A19:** That's something you'll have to figure out on your own. Try different prompts. You can also look at previous Discourse posts for ideas.
+
+**Q20: Can I do this using the command prompt, or is there a way to do it from the website?**
+
+**A20:** You can use the website, but you may need to use the command prompt for some tasks.

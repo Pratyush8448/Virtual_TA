@@ -1,0 +1,29 @@
+### Use Cases
+
+1. **Data Extraction**
+   - Email content aggregation
+   - Dashboard metrics collection
+   - Protected web content
+   - Legacy system data
+2. **Data Journalism**
+   - Public records analysis
+   - Time-series data collection
+   - Interactive visualization data
+   - Government website scraping
+3. **Business Intelligence**
+   - Competitor pricing analysis
+   - Market research data
+   - Internal system migration
+   - Legacy report conversion
+
+Tools:
+
+- [Google AI Studio](https://aistudio.google.com/app/prompts): Process videos with Gemini
+- [QuickTime Player](https://support.apple.com/guide/quicktime-player/welcome/mac): Screen recording (Mac)
+- [Screen2Gif](https://www.screentogif.com/): Screen recording (Windows)
+- [OBS Studio](https://obsproject.com/): Advanced screen recording (cross-platform)
+
+References:
+
+- [Simon Willison's Video Scraping Tutorial](https://simonwillison.net/2024/Oct/17/video-scraping/)
+- [Gemini API Documentation](https://ai.google.dev/docs)

@@ -1,0 +1,37 @@
+- `PYTHONUTF8=1`: Forces Python to use UTF-8 encoding regardless of system locale
+- `uv run --with pymupdf4llm`: Uses uv package manager to run Python with the pymupdf4llm package
+- `python -c '...'`: Executes Python code directly from the command line
+- `import pymupdf4llm`: Imports the PDF-to-Markdown module
+- `h = open("pymupdf4llm.md", "w")`: Creates a file to write the markdown output
+- `h.write(pymupdf4llm.to_markdown("$FILE.pdf"))`: Converts the PDF to markdown and writes to file
+
+## Markitdown
+
+[![Microsoft MarkItDown - Convert Files and Office Documents to Markdown - Install Locally (9 min)](https://i.ytimg.com/vi/v65Oyddfxeg/sddefault.jpg)](https://youtu.be/v65Oyddfxeg)
+
+[Markitdown](https://github.com/microsoft/markitdown) is Microsoft's tool for converting various document formats to Markdown, including PDFs, DOCX, XLSX, PPTX, and ZIP files. It's a versatile multi-format converter that handles PDFs via PDFMiner, DOCX via Mammoth, XLSX via Pandas, and PPTX via Python-PPTX. Good for batch processing of mixed document types. The quality of PDF conversion is generally good but may struggle with complex layouts or heavily formatted documents.
+
+```bash
+PYTHONUTF8=1 uvx markitdown $FILE.pdf > markitdown.md
+```
+
+- `PYTHONUTF8=1`: Forces Python to use UTF-8 encoding
+- `uvx markitdown`: Runs the markitdown tool via the uv package manager
+- `$FILE.pdf`: The input PDF file
+- `> markitdown.md`: Redirects output to a markdown file
+
+### Unstructured
+
+[Unstructured](https://unstructured.io/) is rapidly becoming the de facto library for parsing over 40 different file types. It is excellent for extracting text and tables from diverse document formats. Particularly useful for generating clean content to pass to LLMs. Strong community support and actively maintained.
+
+## GROBID
+
+If you specifically need to parse references from text-native PDFs or reliably OCR'ed ones, [GROBID](https://github.com/kermitt2/grobid) remains the de facto choice. It excels at extracting structured bibliographic information with high accuracy.
+
+```bash
+# Start GROBID service
+docker run -t --rm -p 8070:8070 lfoppiano/grobid:0.7.2
+
+# Process PDF with curl
+curl -X POST -F "input=@paper.pdf" localhost:8070/api/processFulltextDocument > references.tei.xml
+```

@@ -1,0 +1,33 @@
+- name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Run scraper
+        run: | # python
+          uv run --with httpx,lxml,cssselect python scrape.py
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add *.json
+          git commit -m "Update IMDb Top 250 data [skip ci]" || exit 0
+          git push
+```
+
+### Best Practices
+
+1. **Cache Dependencies**: Use GitHub's caching to speed up package installation
+2. **Handle Errors**: Implement retries and error logging
+3. **Rate Limiting**: Add delays between requests to avoid overwhelming servers
+4. **Data Validation**: Verify scraped data structure before saving
+5. **Monitoring**: Set up notifications for workflow failures
+
+### Tools and Resources
+
+- [httpx](https://www.python-httpx.org/): Async HTTP client
+- [GitHub Actions Marketplace](https://github.com/marketplace?type=actions)
+- [GitHub Actions Documentation](https://docs.github.com/en/actions)
+
+### Video Tutorials
+
+[![How to run Github Actions on a Schedule](https://i.ytimg.com/vi_webp/eJG86J200nM/sddefault.webp)](https://youtu.be/eJG86J200nM)

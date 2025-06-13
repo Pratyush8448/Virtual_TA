@@ -1,0 +1,84 @@
+```python
+MEETING_TOOL = {
+    "type": "function",
+    "function": {
+        "name": "schedule_meeting",
+        "description": "Schedule a meeting room for a specific date and time",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "date": {
+                    "type": "string",
+                    "description": "Meeting date in YYYY-MM-DD format"
+                },
+                "time": {
+                    "type": "string",
+                    "description": "Meeting time in HH:MM format"
+                },
+                "meeting_room": {
+                    "type": "string",
+                    "description": "Name of the meeting room"
+                }
+            },
+            "required": ["date", "time", "meeting_room"],
+            "additionalProperties": False
+        },
+        "strict": True
+    }
+}
+```
+
+### How to define multiple functions
+
+You can define multiple functions by passing a list of function definitions to the `tools` parameter.
+
+Here's an example of a list of function definitions for handling employee expenses and calculating performance bonuses:
+
+```python
+tools = [
+    {
+        "type": "function",
+        "function": {
+            "name": "get_expense_balance",
+            "description": "Get expense balance for an employee",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "employee_id": {
+                        "type": "integer",
+                        "description": "Employee ID number"
+                    }
+                },
+                "required": ["employee_id"],
+                "additionalProperties": False
+            },
+            "strict": True
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "calculate_performance_bonus",
+            "description": "Calculate yearly performance bonus for an employee",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "employee_id": {
+                        "type": "integer",
+                        "description": "Employee ID number"
+                    },
+                    "current_year": {
+                        "type": "integer",
+                        "description": "Year to calculate bonus for"
+                    }
+                },
+                "required": ["employee_id", "current_year"],
+                "additionalProperties": False
+            },
+            "strict": True
+        }
+    }
+]
+```
+
+Best Practices:

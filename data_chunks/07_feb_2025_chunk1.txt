@@ -1,0 +1,25 @@
+# Live Session: 07 Feb 2025
+
+[![2025-02-07 Week 4 - Session 4 - TDS Jan 25](https://i.ytimg.com/vi_webp/SiW-rcMk0Nk/sddefault.webp)](https://youtu.be/SiW-rcMk0Nk)
+
+**Q1: How difficult are the TDS assignments?**
+
+**A1:** The first assignment was easy, the second was hard, the third was average, and the fourth seems easy. However, the instructor notes that the first assignment was only easy for those with a technical background; for most students, it was very difficult. The difficulty level of subsequent assignments will decrease.
+
+**Q2: Where can I find the recording of yesterday's session?**
+
+**A2:** It's already uploaded to your calendar associated with your IIT-DS ID. It takes Google about an hour or two to process the video.
+
+**Q3: How do I use the BBC Weather API to get weather data for a specific location?**
+
+**A3:** First, use the BBC location service API to get the location ID for your city (e.g., Delhi). You can use the Thunder Client extension or Postman to send the API request. The instructor demonstrates using Postman. Once you have the location ID, use it in the BBC Weather API endpoint.
+
+**Q4: How do I access data from a JSON object in Python?**
+
+**A4:** JSON objects are like Python dictionaries. You can access the data using standard Python dictionary access methods. The instructor shows how to access the "reports" key.
+
+**Q5: How do I prepare for the upcoming R.O.E.?**
+
+**A5:** The instructor recommends creating your own code and keeping it ready. Separate sessions will be held to cover this.
+
+**Q6: How do I use Nominatim to get geolocation data?**
