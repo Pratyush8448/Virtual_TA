@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "wsgi.py",
+      "src": "main.py",
       "use": "@vercel/python",
       "config": {
         "maxLambdaSize": "50mb",
@@ -12,8 +12,12 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "wsgi.py"
+      "src": "/api/.*",
+      "dest": "main.py"
+    },
+    {
+      "src": "/.*",
+      "dest": "main.py"
     }
   ]
 }
