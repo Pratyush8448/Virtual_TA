@@ -1,1 +1,4 @@
-from main import app as application
+from main import app
+from mangum import Mangum
+
+application = Mangum(app)
