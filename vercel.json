@@ -12,7 +12,11 @@
   ],
   "routes": [
     {
-      "src": "/api/.*",
+      "src": "/api/(.*)",
+      "dest": "wsgi.py"
+    },
+    {
+      "src": "/(.*)",
       "dest": "wsgi.py"
     }
   ]
