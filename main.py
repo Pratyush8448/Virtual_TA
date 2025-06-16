@@ -6,13 +6,17 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional, List
 import base64
-import os
 import tempfile
+import json
 
 from api.rag_model.generator import get_rag_chain
 from api.rag_model.retriever import get_retriever
 
-# Initialize app
+# Load discourse thread metadata
+with open("data_chunks/discourse_threads.json", "r", encoding="utf-8") as f:
+    discourse_threads = json.load(f)
+
+# Initialize FastAPI app
 app = FastAPI(
     title="Virtual TA - Tools in Data Science",
     version="1.0",
@@ -27,14 +31,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Set up the RAG chain
+# Set up RAG pipeline
 retriever = get_retriever()
 rag_chain = get_rag_chain(retriever)
 
-# Models
+# Request and response models
 class QueryRequest(BaseModel):
     question: str
-    image: Optional[str] = None  # base64-encoded image string
+    image: Optional[str] = None  # base64-encoded image
 
 class Link(BaseModel):
     url: str
@@ -44,10 +48,11 @@ class QueryResponse(BaseModel):
     answer: str
     links: List[Link] = []
 
+# Function to decode base64 image
 def save_base64_image(base64_str: str) -> str:
     try:
         if "," in base64_str:
-            base64_str = base64_str.split(",")[1]  # Remove data URI prefix
+            base64_str = base64_str.split(",")[1]
         base64_bytes = base64_str.encode("utf-8")
         image_data = base64.b64decode(base64_bytes, validate=True)
 
@@ -58,7 +63,6 @@ def save_base64_image(base64_str: str) -> str:
         return file_path
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Invalid base64 image: {e}")
-
 
 @app.post("/api/", response_model=QueryResponse)
 async def process_question(req: QueryRequest):
@@ -82,14 +86,21 @@ async def process_question(req: QueryRequest):
     elif isinstance(response, dict) and "output" in response:
         response = response["output"]
 
+    # Build list of relevant links
+    links = [Link(
+        url="https://discourse.onlinedegree.iitm.ac.in/",
+        text="Visit the IITM Discourse Forum for related discussions"
+    )]
 
-    # Add links if present
-    links = []
-    if "GA5" in question:
-        links.append(Link(
-            url="https://discourse.onlinedegree.iitm.ac.in/t/ga5-question-8-clarification/155939",
-            text="GA5 Question 8 Clarification"
-        ))
+    # Keyword match to thread content/title
+    question_words = set(question.lower().split())
+    for thread in discourse_threads:
+        thread_words = set(thread["title"].lower().split()) | set(thread["content"].lower().split())
+        if question_words & thread_words:
+            links.append(Link(url=thread["url"], text=thread["title"]))
+
+    # Limit to 3 links max
+    links = links[:3]
 
     return QueryResponse(answer=response, links=links)
 

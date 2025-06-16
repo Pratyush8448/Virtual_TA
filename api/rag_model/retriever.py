@@ -1,6 +1,5 @@
-# File: api/rag_model/retriever.py
-
 import os
+import json
 import requests
 from typing import List
 from langchain.docstore.document import Document
@@ -9,8 +8,8 @@ from langchain.embeddings.base import Embeddings
 from langchain.vectorstores.base import VectorStoreRetriever
 from langchain_core.runnables import RunnableLambda
 
-
 CHUNKS_FOLDER = "data_chunks"
+DISCOURSE_FOLDER = "downloaded_threads"
 INDEX_PATH = "faiss_index"
 
 
@@ -29,16 +28,11 @@ class ProxyEmbeddings(Embeddings):
         for i, text in enumerate(texts):
             if not isinstance(text, str):
                 raise ValueError(f"[ERROR] Input at index {i} is not a string. Got: {type(text)}")
-
             payload = {"model": self.model, "input": text}
             response = requests.post(f"{self.api_base}/embeddings", headers=self.headers, json=payload)
-
             if response.status_code != 200:
-                raise Exception(f"[Embedding Error] Document #{i} failed: {response.status_code} {response.text}")
-
-            embedding_vector = response.json()["data"][0]["embedding"]
-            embeddings.append(embedding_vector)
-
+                raise Exception(f"[Embedding Error] Doc #{i} failed: {response.status_code} {response.text}")
+            embeddings.append(response.json()["data"][0]["embedding"])
         return embeddings
 
     def embed_query(self, text: str) -> List[float]:
@@ -46,16 +40,16 @@ class ProxyEmbeddings(Embeddings):
             raise ValueError(f"[ERROR] Embedding input must be a string. Got: {type(text)}")
         payload = {"model": self.model, "input": text}
         response = requests.post(f"{self.api_base}/embeddings", headers=self.headers, json=payload)
-
         if response.status_code != 200:
             raise Exception(f"Embedding query failed: {response.status_code} {response.text}")
         return response.json()["data"][0]["embedding"]
 
 
 class Retriever:
-    def __init__(self, chunks_folder=CHUNKS_FOLDER, index_path=INDEX_PATH):
+    def __init__(self, chunks_folder=CHUNKS_FOLDER, index_path=INDEX_PATH, discourse_folder=DISCOURSE_FOLDER):
         self.chunks_folder = chunks_folder
         self.index_path = index_path
+        self.discourse_folder = discourse_folder
 
         self.api_key = os.getenv("OPENAI_API_KEY")
         self.api_base = os.getenv("OPENAI_API_BASE")
@@ -74,23 +68,41 @@ class Retriever:
                 self.index_path, self.embeddings, allow_dangerous_deserialization=True
             )
         else:
-            print(f"[Retriever] Building new FAISS index from folder: {self.chunks_folder}")
+            print(f"[Retriever] Building new FAISS index from text chunks and Discourse threads...")
             return self.build_index()
 
     def build_index(self) -> FAISS:
-        texts, metadatas = [], []
-        files = [f for f in os.listdir(self.chunks_folder) if f.endswith(".txt")]
+        documents = []
 
-        for filename in files:
+        # Load plain .txt chunks
+        txt_files = [f for f in os.listdir(self.chunks_folder) if f.endswith(".txt")]
+        for filename in txt_files:
             path = os.path.join(self.chunks_folder, filename)
             with open(path, "r", encoding="utf-8") as f:
-                texts.append(f.read())
-                metadatas.append({"source": filename})
+                content = f.read()
+                documents.append(Document(page_content=content, metadata={"source": filename}))
 
-        documents = [Document(page_content=t, metadata=m) for t, m in zip(texts, metadatas)]
+        # Load Discourse threads
+        json_files = [f for f in os.listdir(self.discourse_folder) if f.endswith(".json")]
+        for filename in json_files:
+            path = os.path.join(self.discourse_folder, filename)
+            try:
+                with open(path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    title = data.get("title", "")
+                    posts = data.get("post_stream", {}).get("posts", [])
+
+                    for post in posts:
+                        body = post.get("cooked", "")
+                        text = f"{title}\n{body}".strip()
+                        if text:
+                            documents.append(Document(page_content=text, metadata={"source": filename}))
+            except Exception as e:
+                print(f"[WARNING] Failed to load {filename}: {e}")
+
         index = FAISS.from_documents(documents, self.embeddings)
         index.save_local(self.index_path)
-        print(f"[Retriever] FAISS index saved at {self.index_path}")
+        print(f"[Retriever] FAISS index built and saved at {self.index_path}")
         return index
 
     def get_vectorstore_retriever(self):
