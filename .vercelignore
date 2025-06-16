@@ -1,0 +1,6 @@
+course_modules/
+*.webp
+*.pkl
+*.faiss
+*.yaml
+*.txt
