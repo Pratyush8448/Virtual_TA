@@ -92,15 +92,20 @@ async def process_question(req: QueryRequest):
         text="Visit the IITM Discourse Forum for related discussions"
     )]
 
-    # Keyword match to thread content/title
+    # Improved thread matching logic
     question_words = set(question.lower().split())
+    thread_scores = []
     for thread in discourse_threads:
         thread_words = set(thread["title"].lower().split()) | set(thread["content"].lower().split())
-        if question_words & thread_words:
-            links.append(Link(url=thread["url"], text=thread["title"]))
+        common_words = question_words & thread_words
+        score = len(common_words)
+        if score > 1:
+            thread_scores.append((score, thread))
 
-    # Limit to 3 links max
-    links = links[:3]
+    # Sort by relevance and add top 2
+    thread_scores.sort(reverse=True, key=lambda x: x[0])
+    for _, thread in thread_scores[:2]:
+        links.append(Link(url=thread["url"], text=thread["title"]))
 
     return QueryResponse(answer=response, links=links)
 
