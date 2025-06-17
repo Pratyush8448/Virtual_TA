@@ -7,12 +7,7 @@ if os.getenv("VERCEL") != "1":
         from dotenv import load_dotenv
         load_dotenv()
     except ImportError:
-        pass
-
-
-
-from dotenv import load_dotenv
-load_dotenv()
+        print("[WARNING] dotenv not available, skipping local env loading.")
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
