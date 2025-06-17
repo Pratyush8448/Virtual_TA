@@ -5,3 +5,4 @@ course_modules/
 *.yaml
 *.txt
 chrome-win64/
+render.yaml
