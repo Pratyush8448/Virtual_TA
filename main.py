@@ -1,13 +1,17 @@
 import os
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
-
+import os
 
 if os.getenv("VERCEL") != "1":
     try:
         from dotenv import load_dotenv
         load_dotenv()
     except ImportError:
-        print("[WARNING] dotenv not available, skipping local env loading.")
+        pass
+
+
+from dotenv import load_dotenv
+load_dotenv()
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -39,9 +43,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Set up RAG pipeline
-retriever = get_retriever()
-rag_chain = get_rag_chain(retriever)
+@app.on_event("startup")
+async def startup_event():
+    retriever = get_retriever()
+    app.state.retriever = retriever
+    app.state.rag_chain = get_rag_chain(retriever)
+
 
 # Request and response models
 class QueryRequest(BaseModel):
@@ -74,6 +81,9 @@ def save_base64_image(base64_str: str) -> str:
 
 @app.post("/api/", response_model=QueryResponse)
 async def process_question(req: QueryRequest):
+    # ✅ Use the RAG chain loaded once on startup
+    rag_chain = app.state.rag_chain  
+
     question = req.question
     image_data = req.image
 
@@ -88,11 +98,18 @@ async def process_question(req: QueryRequest):
         except Exception as e:
             print(f"[ERROR] OCR failed: {e}")
 
-    response = await rag_chain.ainvoke({"question": question})
-    if hasattr(response, "content"):
-        response = response.content
-    elif isinstance(response, dict) and "output" in response:
-        response = response["output"]
+    try:
+        response = await rag_chain.ainvoke({"question": question})
+        if hasattr(response, "content"):
+            response = response.content
+        elif isinstance(response, dict) and "output" in response:
+            response = response["output"]
+        elif isinstance(response, str):
+            pass  # response is already a string
+        else:
+            response = str(response)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"RAG chain failed: {e}")
 
     # Build list of relevant links
     links = [Link(
@@ -100,7 +117,7 @@ async def process_question(req: QueryRequest):
         text="Visit the IITM Discourse Forum for related discussions"
     )]
 
-    # Improved thread matching logic
+    # Match top threads
     question_words = set(question.lower().split())
     thread_scores = []
     for thread in discourse_threads:
@@ -110,7 +127,6 @@ async def process_question(req: QueryRequest):
         if score > 1:
             thread_scores.append((score, thread))
 
-    # Sort by relevance and add top 2
     thread_scores.sort(reverse=True, key=lambda x: x[0])
     for _, thread in thread_scores[:2]:
         links.append(Link(url=thread["url"], text=thread["title"]))
@@ -120,7 +136,3 @@ async def process_question(req: QueryRequest):
 @app.get("/")
 def root():
     return {"message": "Virtual TA API is live 🚀"}
-
-
-# Tell Vercel where to find the FastAPI app
-asgi_app = app
