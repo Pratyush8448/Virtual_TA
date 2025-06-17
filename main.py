@@ -120,3 +120,7 @@ async def process_question(req: QueryRequest):
 @app.get("/")
 def root():
     return {"message": "Virtual TA API is live 🚀"}
+
+
+# Tell Vercel where to find the FastAPI app
+asgi_app = app
