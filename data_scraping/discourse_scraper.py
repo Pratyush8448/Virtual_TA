@@ -1,59 +1,44 @@
-import requests
-import time
 import json
-from tqdm import tqdm
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 
-BASE_URL = "https://discourse.onlinedegree.iitm.ac.in/c/courses/tds-kb/34/l/latest.json"
+def get_discourse_topics():
+    print("[INFO] Launching headless browser...")
 
-CATEGORY_SLUG = "tools-in-data-science"
-CATEGORY_ID = 15  # Confirm this by visiting the category page JSON e.g. /c/tools-in-data-science/15.json
-OUTPUT_FILE = "tds_discourse_threads.json"
+    # Chrome options for headless mode
+    options = Options()
+    options.add_argument("--headless")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
 
-def get_topics():
-    print("[INFO] Fetching topic list...")
-    url = "https://discourse.onlinedegree.iitm.ac.in/c/courses/tds-kb/34/l/latest.json"
-    headers = {
-        "User-Agent": "Mozilla/5.0",  # disguise as browser
-    }
-    response = requests.get(url, headers=headers)
-    response.raise_for_status()
-    data = response.json()
-    return data.get("topic_list", {}).get("topics", [])
+    # Start browser
+    driver = webdriver.Chrome(options=options)
 
+    try:
+        url = "https://discourse.onlinedegree.iitm.ac.in/c/courses/tds-kb/34/l/latest"
+        print(f"[INFO] Visiting {url}")
+        driver.get(url)
 
-def get_topic_posts(topic_id):
-    url = f"{BASE_URL}/t/{topic_id}.json"
-    response = requests.get(url)
-    if response.status_code != 200:
-        print(f"[WARN] Failed to fetch topic {topic_id}")
-        return []
-    data = response.json()
-    posts = data.get("post_stream", {}).get("posts", [])
-    return [{"username": p["username"], "content": p["cooked"], "post_number": p["post_number"]} for p in posts]
+        # Wait for the JavaScript to render
+        time.sleep(5)
 
-def scrape_discourse():
-    topics = get_topics()
-    # continue scraping posts...
+        print("[INFO] Extracting topic list...")
+        data = driver.execute_script("return window.__initialState;")
+        driver.quit()
 
+        with open("latest_topics.json", "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2)
+        print("[SUCCESS] Scraped and saved latest_topics.json")
 
-    print(f"[INFO] Scraping {len(topics)} topics...")
+        topics = data["topicList"]["topics"]
+        for t in topics:
+            print(f"- [{t['id']}] {t['title']}")
 
-    for topic in tqdm(topics):
-        topic_id = topic["id"]
-        title = topic["title"]
-        posts = get_topic_posts(topic_id)
-        results.append({
-            "topic_id": topic_id,
-            "title": title,
-            "posts": posts
-        })
-        time.sleep(1)  # Avoid rate-limiting
-
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(results, f, indent=2, ensure_ascii=False)
-
-    print(f"[DONE] Saved {len(results)} threads to {OUTPUT_FILE}")
+    except Exception as e:
+        driver.quit()
+        print(f"[ERROR] {e}")
 
 if __name__ == "__main__":
-    scrape_discourse()
-
+    get_discourse_topics()

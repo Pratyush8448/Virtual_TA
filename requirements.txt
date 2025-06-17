@@ -1,21 +1,33 @@
+# FastAPI & Server
 fastapi>=0.95.2,<1.0.0
 uvicorn>=0.22.0,<1.0.0
+
+# LangChain & OpenAI
 langchain>=0.1.0,<0.2.0
-openai>=1.3.5,<2.0.0
+langchain-core>=0.1.0,<0.2.0
 langchain-openai>=0.1.6
+langchain-community>=0.0.24
+
+# Vector DB
 faiss-cpu>=1.7.4
-beautifulsoup4>=4.12.0
-requests>=2.31.0
-python-multipart>=0.0.6
+
+# OCR + Image Handling
 easyocr>=1.7.1
 pillow>=10.0.0
-pydantic==1.10.15
+
+# Core Dependencies
+requests>=2.31.0
+pydantic==2.6.4
+python-multipart>=0.0.6
+python-dotenv>=1.0.1
+typing-extensions>=4.10.0
 tqdm>=4.66.1
-mangum>=0.17.0
+
+# ML Backend
 torch>=2.0.0,<3.0.0
 numpy>=1.24.0,<2.3
 scikit-learn==1.4.2
 sentence-transformers>=2.2.2
-typing-extensions>=4.10.0
-markdown>=3.6
-python-dotenv>=1.0.1
+
+# ASGI Adapter for Vercel/AWS (optional)
+mangum>=0.17.0

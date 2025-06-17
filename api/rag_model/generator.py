@@ -16,7 +16,7 @@ def get_rag_chain(retriever):
     model="gpt-4o-mini",
     temperature=0,
     api_key=os.environ.get("OPENAI_API_KEY"),
-    openai_api_base=os.environ.get("OPENAI_API_BASE")  # ✅ use this
+    openai_api_base=os.environ.get("OPENAI_API_BASE") 
 )
 
     print("[DEBUG] Defining RAG prompt...")

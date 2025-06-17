@@ -4,3 +4,4 @@ course_modules/
 *.faiss
 *.yaml
 *.txt
+chrome-win64/
