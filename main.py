@@ -124,3 +124,9 @@ async def process_question(req: QueryRequest):
 @app.get("/")
 def root():
     return {"message": "Virtual TA API is live 🚀"}
+
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))  # use Railway's provided port
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=False)
