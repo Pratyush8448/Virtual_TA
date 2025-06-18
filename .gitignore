@@ -27,9 +27,9 @@ Thumbs.db
 .idea/
 
 # FAISS index or Embedding files
-*.faiss
-*.pkl
-*.npz
+#*.faiss
+#*.pkl
+#*.npz
 
 # Checkpoints (if using notebooks)
 .ipynb_checkpoints/
